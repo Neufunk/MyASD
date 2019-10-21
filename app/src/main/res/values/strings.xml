@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">MyASD</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">MyASD</string>
+    <string name="nav_header_subtitle">informatique@asd-namur.be</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="action_about">À propos</string>
+
+    <string name="image_description">Image</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_applicar">Applicar</string>
+    <string name="menu_stagiaires">Eval. Stagiaires</string>
+    <string name="menu_katz">Echelles de Katz</string>
+    <string name="menu_roadsheets">Feuilles de route \  <font size="10"><i>beta</i></font></string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="applicar">Applicar</string>
+    <string name="title_activity_applicar">Applicar</string>
+    <string name="title_activity_katz">Echelles de Katz</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="title_activity_evaluation_stagiaires">Évaluation de fin de stage</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

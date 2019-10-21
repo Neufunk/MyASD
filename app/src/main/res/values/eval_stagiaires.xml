@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="evaluation_stagiaires_titre">Evalutaion de fin de stage</string>
+    <string name="eval_stagiaire_text_view_name">NOM DE L\'ÉTUDIANT(E) :</string>
+    <string name="eval_stagiaire_text_school">ECOLE :</string>
+    <string name="eval_stagiaire_text_section">SECTION :</string>
+</resources>

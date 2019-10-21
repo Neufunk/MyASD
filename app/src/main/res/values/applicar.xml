@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feedbacktype1">Choisissez dans la liste :</string>
+    <string name="feedbacktype2">Entretien</string>
+    <string name="feedbacktype3">Changement de pneus</string>
+    <string name="feedbacktype4">Autre</string>
+
+    <string name="moment1">Journée</string>
+    <string name="moment2">AM</string>
+    <string name="moment3">PM</string>
+
+    <string name="TextView1">Demande d\'intervention d\'un chauffeur-logisticien</string>
+    <string name="TextView2">Plaque</string>
+    <string name="TextView7">Kilomètrage</string>
+    <string name="TextView3">Adresse où se trouvera le véhicule</string>
+    <string name="TextView4">Dates</string>
+    <string name="TextView5">Type d\'intervention</string>
+    <string name="TextView6">Remarques</string>
+
+    <string name="CheckBox1">Véhicule au domicile</string>
+    <string name="CheckBox2">Double de clé au centre</string>
+    <string name="drawer_open">Ouvrir Menu Navigation</string>
+    <string name="drawer_close">Fermer Menu Navigation</string>
+</resources>
