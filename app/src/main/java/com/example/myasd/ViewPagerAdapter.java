@@ -5,22 +5,31 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.widget.CheckBox;
+
+import com.example.myasd.KatzFragment.Shabiller;
+import com.example.myasd.KatzFragment.SeLaver;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
-    public ViewPagerAdapter(FragmentManager fm) {
+    ViewPagerAdapter(FragmentManager fm) {
         super(fm);
     }
 
     @Override
     public Fragment getItem(int position) {
-        KatzFragment katzFragment = new KatzFragment();
-        position = position+1;
-        Bundle bundle = new Bundle();
-        bundle.putString("message", "Fragment :" + position);
-        katzFragment.setArguments(bundle);
-        return katzFragment;
+        if (position == 0) {
+            SeLaver katzFragment = new SeLaver();
+            position = position + 1;
+            Bundle bundle = new Bundle();
+            katzFragment.setArguments(bundle);
+            return katzFragment;
+        } else {
+            Shabiller katzFragment = new Shabiller();
+            position = position + 1;
+            Bundle bundle = new Bundle();
+            katzFragment.setArguments(bundle);
+            return katzFragment;
+        }
     }
 
     @Override

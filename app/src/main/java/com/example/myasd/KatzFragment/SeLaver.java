@@ -1,5 +1,4 @@
-package com.example.myasd;
-
+package com.example.myasd.KatzFragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,16 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.TextView;
 
+import com.example.myasd.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class KatzFragment extends Fragment {
+import java.util.Objects;
 
+public class SeLaver extends Fragment {
 
-    public KatzFragment() {
+    public SeLaver() {
         // Required empty public constructor
     }
 
@@ -25,10 +22,8 @@ public class KatzFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_katz, container, false);
-        CheckBox checkBox = view.findViewById(R.id.txt_display);
-        checkBox.setText(getArguments().getString("message"));
+        View view = inflater.inflate(R.layout.se_laver, container, false);
         return view;
     }
-
 }
+
