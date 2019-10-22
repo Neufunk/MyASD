@@ -6,14 +6,16 @@
     tools:context=".KatzFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+
+    <CheckBox
+        android:id="@+id/txt_display"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="TEST FRAGMENT"
-        android:textStyle="bold"
-        android:textSize="24sp"
+        android:layout_weight="1"
         android:gravity="center"
-        android:id="@+id/txt_display"
-        />
+        android:text="CheckBox"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
 </LinearLayout>
