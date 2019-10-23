@@ -6,9 +6,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.myasd.KatzFragment.Shabiller;
-import com.example.myasd.KatzFragment.SeLaver;
-
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     ViewPagerAdapter(FragmentManager fm) {

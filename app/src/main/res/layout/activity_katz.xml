@@ -28,7 +28,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="#006782"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     <android.support.design.widget.TabLayout
@@ -37,7 +37,7 @@
         android:id="@+id/tabs"
         android:elevation="4dp"
         android:minHeight="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
+        android:background="#006782"
         app:tabMode="scrollable"
         app:tabGravity="fill"
         app:tabTextColor="#FFF"
