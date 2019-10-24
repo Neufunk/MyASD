@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="120dp"
-    tools:context=".KatzFragment.Shabiller">
+    tools:context=".KatzFragment.Manger">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_weight="1"
-            android:text="Est capable de s'habiller/se déshabiller au-dessus de la ceinture"
+            android:text="Est capable de manger seul"
             android:textSize="18sp" />
 
         <CheckBox
@@ -28,15 +28,15 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_weight="1"
-            android:text="Est capable de s'habiller/se déshabiller en dessous de la ceinture"
+            android:text="Est capable de boire seul"
             android:textSize="18sp" />
 
         <CheckBox
             android:id="@+id/checkBox7"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
-            android:text="Aide partielle pour s'habiller et/ou se déshabiller au-dessus de la ceinture (par exemple enfiler un corset)"
+            android:text="Aide préalable pour manger : tartiner, couper,."
             android:textSize="18sp" />
 
         <CheckBox
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:text="Aide partielle pour s'habiller et/ou se déshabiller en dessous de la ceinture (par exemple enfiler des bas à varices)"
+            android:text="Aide préalable pour boire"
             android:textSize="18sp" />
 
         <CheckBox
@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_weight="1"
-            android:text="Stimulation (vocale ou physique -par exemple préparer les vêtements-)"
+            android:text="Dispose de moyens d'aide adaptés"
             android:textSize="18sp" />
 
         <CheckBox
@@ -60,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_weight="1"
-            android:text="Surveillance individuelle et continue"
+            android:text="Aide occasionnelle de tiers"
             android:textSize="18sp" />
 
         <CheckBox
@@ -68,7 +68,15 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_weight="1"
-            android:text="Aide pour les orthèses/prothèses (membre supériers/et ou inférieurs) indispensable à sopn autonomie locomotrice"
+            android:text="Stimulation (vocale ou physique)"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/checkBox12"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:text="Surveillance individuelle et continue"
             android:textSize="18sp" />
 
         <TextView
@@ -77,7 +85,7 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Obligation de cocher minimum 1 critère" />
+            android:text="Obligation de cocher minimum un critère" />
 
 
     </LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.myasd;
+package com.example.myasd.KatzFragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,10 +12,10 @@ import com.example.myasd.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Shabiller extends Fragment {
+public class Continence extends Fragment {
 
 
-    public Shabiller() {
+    public Continence() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class Shabiller extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.s_habiller, container, false);
+        View view = inflater.inflate(R.layout.continence, container, false);
         return view;
     }
 }

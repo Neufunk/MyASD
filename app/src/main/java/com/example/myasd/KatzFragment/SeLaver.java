@@ -1,4 +1,4 @@
-package com.example.myasd;
+package com.example.myasd.KatzFragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,6 +13,8 @@ import java.util.Objects;
 
 public class SeLaver extends Fragment {
 
+    public static CheckBox[] checkBoxArray = new CheckBox[8];
+
     public SeLaver() {
         // Required empty public constructor
     }
@@ -24,6 +26,7 @@ public class SeLaver extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.se_laver, container, false);
         checkBoxManipulation(view);
+        setCheckboxes(view);
         return view;
     }
 
@@ -42,8 +45,10 @@ public class SeLaver extends Fragment {
             public void onClick(View v) {
                 if (checkBox1.isChecked()) {
                     checkBox3.setEnabled(false);
+                    checkBox8.setEnabled(false);
                 } else {
                     checkBox3.setEnabled(true);
+                    checkBox8.setEnabled(true);
                 }
             }
         });
@@ -52,8 +57,10 @@ public class SeLaver extends Fragment {
             public void onClick(View v) {
                 if (checkBox2.isChecked()) {
                     checkBox4.setEnabled(false);
+                    checkBox8.setEnabled(false);
                 } else {
                     checkBox4.setEnabled(true);
+                    checkBox8.setEnabled(true);
                 }
             }
         });
@@ -62,8 +69,10 @@ public class SeLaver extends Fragment {
             public void onClick(View v) {
                 if (checkBox3.isChecked()) {
                     checkBox1.setEnabled(false);
+                    checkBox8.setEnabled(false);
                 } else {
                     checkBox1.setEnabled(true);
+                    checkBox8.setEnabled(true);
                 }
             }
         });
@@ -72,8 +81,20 @@ public class SeLaver extends Fragment {
             public void onClick(View v) {
                 if (checkBox4.isChecked()) {
                     checkBox2.setEnabled(false);
+                    checkBox8.setEnabled(false);
                 } else {
                     checkBox2.setEnabled(true);
+                    checkBox8.setEnabled(true);
+                }
+            }
+        });
+        checkBox5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (checkBox4.isChecked()) {
+                    checkBox8.setEnabled(false);
+                } else {
+                    checkBox8.setEnabled(true);
                 }
             }
         });
@@ -82,8 +103,10 @@ public class SeLaver extends Fragment {
             public void onClick(View v) {
                 if (checkBox6.isChecked()) {
                     checkBox7.setEnabled(false);
+                    checkBox8.setEnabled(false);
                 } else {
                     checkBox7.setEnabled(true);
+                    checkBox8.setEnabled(true);
                 }
             }
         });
@@ -92,8 +115,10 @@ public class SeLaver extends Fragment {
             public void onClick(View v) {
                 if (checkBox7.isChecked()) {
                     checkBox6.setEnabled(false);
+                    checkBox8.setEnabled(false);
                 } else {
                     checkBox6.setEnabled(true);
+                    checkBox8.setEnabled(true);
                 }
             }
         });
@@ -119,15 +144,12 @@ public class SeLaver extends Fragment {
                 }
             }
         });
+    }
 
+    public void setCheckboxes(View view) {
+        for(int i = 0; i < checkBoxArray.length; i++){
 
-
-
-
-
-
-
-
+        }
     }
 
 
