@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -17,10 +19,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
+import com.example.myasd.KatzFragment.Resume;
 import com.example.myasd.KatzFragment.SeLaver;
 
 public class EchelleKatz extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, Resume.OnGetFromUserClickListener {
+
+    String message;
+    String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +39,13 @@ public class EchelleKatz extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sendMail();
-                Snackbar.make(view, "Veuillez corriger les erreurs", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                if (checkEmpty()) {
+                    setMessage();
+                    sendMail();
+                } else {
+                    Snackbar.make(view, "Veuillez corriger les erreurs", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -54,8 +64,7 @@ public class EchelleKatz extends AppCompatActivity
 
         TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
-
-        }
+    }
 
     @Override
     public void onBackPressed() {
@@ -114,16 +123,36 @@ public class EchelleKatz extends AppCompatActivity
         return true;
     }
 
+    private Boolean checkEmpty() {
+        return true;
+    }
+
+    public void getFromUser(String name) {
+        Log.i("TEST", name);
+        this.name = name;
+    }
+
+    private void setMessage() {
+        message = "NOM DU PATIENT : " + name  + "\n";
+        message = message + "PRENOM DU PATIENT : " +  "\n";
+        message = message + "NISS DU PATIENT : " + "\n\n";
+        message = message + "SE LAVER \n ----------------\n";
+        for (int j = 0; j < SeLaver.getCheckboxes().size(); j++) {
+            if (SeLaver.getCheckboxes().get(j).isChecked()) {
+                message = message + "- " + SeLaver.getCheckboxes().get(j).getText() + "\n";
+            }
+        }
+    }
+
     private void sendMail() {
         Intent i = new Intent(Intent.ACTION_SEND);
         i.setType("message/rfc822");
         i.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"informatique@asd-namur.be"});
         i.putExtra(Intent.EXTRA_SUBJECT, "Nouvelle Échelle de Katz");
-        i.putExtra(android.content.Intent.EXTRA_TEXT, "Envoi d'une Échelle de Katz"
+        i.putExtra(android.content.Intent.EXTRA_TEXT, "NOUVELLE ÉCHELLE DE KATZ\n"
 
                 + System.getProperty("line.separator")
-
-
+                + message
         );
         startActivity(Intent.createChooser(i, "Choisissez l'application \"Email\" pour envoyer votre demande :"));
     }

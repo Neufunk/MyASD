@@ -9,11 +9,16 @@ import android.widget.CheckBox;
 
 import com.example.myasd.R;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 
 public class SeLaver extends Fragment {
 
-    public static CheckBox[] checkBoxArray = new CheckBox[8];
+    static private List<CheckBox> checkBoxList = new ArrayList<CheckBox>();
 
     public SeLaver() {
         // Required empty public constructor
@@ -26,7 +31,6 @@ public class SeLaver extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.se_laver, container, false);
         checkBoxManipulation(view);
-        setCheckboxes(view);
         return view;
     }
 
@@ -39,6 +43,8 @@ public class SeLaver extends Fragment {
         final CheckBox checkBox6 = view.findViewById(R.id.checkBox6);
         final CheckBox checkBox7 = view.findViewById(R.id.checkBox7);
         final CheckBox checkBox8 = view.findViewById(R.id.checkBox8);
+
+        Collections.addAll(checkBoxList, checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8);
 
         checkBox1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +97,7 @@ public class SeLaver extends Fragment {
         checkBox5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (checkBox4.isChecked()) {
+                if (checkBox5.isChecked()) {
                     checkBox8.setEnabled(false);
                 } else {
                     checkBox8.setEnabled(true);
@@ -146,12 +152,11 @@ public class SeLaver extends Fragment {
         });
     }
 
-    public void setCheckboxes(View view) {
-        for(int i = 0; i < checkBoxArray.length; i++){
-
+    public static List<CheckBox> getCheckboxes() {
+        return checkBoxList;
         }
     }
 
 
-}
+
 

@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.myasd.KatzFragment.Continence;
 import com.example.myasd.KatzFragment.Manger;
+import com.example.myasd.KatzFragment.Resume;
 import com.example.myasd.KatzFragment.SeLaver;
 import com.example.myasd.KatzFragment.Shabiller;
 import com.example.myasd.KatzFragment.Toilette;
@@ -51,6 +52,11 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             Bundle bundle = new Bundle();
             katzFragment.setArguments(bundle);
             return katzFragment;
+        } else if (position == 6) {
+            Resume katzFragment = new Resume();
+            Bundle bundle = new Bundle();
+            katzFragment.setArguments(bundle);
+            return katzFragment;
         } else {
             return null;
         }
@@ -58,13 +64,13 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 6;
+        return 7;
     }
 
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        String[] titleTab = {"SE LAVER", "S'HABILLER", "TRANSFERT & DÉPLACEMENT", "ALLER À LA TOILETTE", "CONTINENCE", "MANGER"};
+        String[] titleTab = {"SE LAVER", "S'HABILLER", "TRANSFERT & DÉPLACEMENT", "ALLER À LA TOILETTE", "CONTINENCE", "MANGER", "RESUMÉ"};
         return titleTab[position];
     }
 }
