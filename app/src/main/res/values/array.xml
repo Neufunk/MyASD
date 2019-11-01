@@ -12,7 +12,14 @@
         <item>@string/moment1</item>
         <item>@string/moment2</item>
         <item>@string/moment3</item>
+    </string-array>
 
+    <string-array name="centre_name">
+        <item>Philippeville</item>
+        <item>Ciney</item>
+        <item>Gedinne</item>
+        <item>Eghezée</item>
+        <item>Namur</item>
     </string-array>
 
 </resources>

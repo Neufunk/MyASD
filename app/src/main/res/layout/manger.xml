@@ -18,7 +18,7 @@
         <CheckBox
             android:id="@+id/checkBox5"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:text="Est capable de manger seul"
             android:textSize="18sp" />
@@ -26,7 +26,7 @@
         <CheckBox
             android:id="@+id/checkBox6"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:text="Est capable de boire seul"
             android:textSize="18sp" />
@@ -34,7 +34,7 @@
         <CheckBox
             android:id="@+id/checkBox7"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:text="Aide préalable pour manger : tartiner, couper,."
             android:textSize="18sp" />
@@ -42,7 +42,7 @@
         <CheckBox
             android:id="@+id/checkBox8"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:text="Aide préalable pour boire"
             android:textSize="18sp" />
@@ -50,7 +50,7 @@
         <CheckBox
             android:id="@+id/checkBox9"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:text="Dispose de moyens d'aide adaptés"
             android:textSize="18sp" />
@@ -58,7 +58,7 @@
         <CheckBox
             android:id="@+id/checkBox10"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:text="Aide occasionnelle de tiers"
             android:textSize="18sp" />
@@ -66,7 +66,7 @@
         <CheckBox
             android:id="@+id/checkBox11"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:text="Stimulation (vocale ou physique)"
             android:textSize="18sp" />
@@ -74,7 +74,7 @@
         <CheckBox
             android:id="@+id/checkBox12"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:text="Surveillance individuelle et continue"
             android:textSize="18sp" />
@@ -82,7 +82,7 @@
         <TextView
             android:id="@+id/textView1"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:gravity="center"
             android:text="Obligation de cocher minimum un critère" />

@@ -85,6 +85,26 @@
             android:hint="NISS" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_marginStart="80dp"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:text="CENTRE : "/>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:entries="@array/centre_name"/>
+
+
+    </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
