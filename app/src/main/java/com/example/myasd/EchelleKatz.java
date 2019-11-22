@@ -3,38 +3,46 @@ package com.example.myasd;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.util.Log;
-import android.view.View;
 import android.support.v4.view.GravityCompat;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.view.MenuItem;
-import android.support.design.widget.NavigationView;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 
 import com.example.myasd.KatzFragment.Resume;
 import com.example.myasd.KatzFragment.SeLaver;
 
 public class EchelleKatz extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, Resume.OnGetFromUserClickListener {
+        implements NavigationView.OnNavigationItemSelectedListener, SeLaver.SendScore {
 
     String message;
     String name;
+
+    TabLayout tabLayout;
+    ViewPager viewPager;
+    ViewPagerAdapter viewPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_katz);
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(viewPagerAdapter);
+        viewPager.setOffscreenPageLimit(10);
+        tabLayout = findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPager);
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +56,17 @@ public class EchelleKatz extends AppCompatActivity
                 }
             }
         });
+
+        FloatingActionButton fab_calculate = findViewById(R.id.fab_calcultate);
+        fab_calculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "PAS ENCORE IMPL", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+
+        });
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
 
@@ -57,13 +76,6 @@ public class EchelleKatz extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.getMenu().getItem(3).setChecked(true);
-
-        ViewPager viewPager = findViewById(R.id.pager);
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        viewPager.setAdapter(adapter);
-
-        TabLayout tabLayout = findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(viewPager);
     }
 
     @Override
@@ -127,21 +139,11 @@ public class EchelleKatz extends AppCompatActivity
         return true;
     }
 
-    public void getFromUser(String name) {
-        Log.i("TEST", name);
-        this.name = name;
-    }
-
     private void setMessage() {
-        message = "NOM DU PATIENT : " + name  + "\n";
-        message = message + "PRENOM DU PATIENT : " +  "\n";
+        message = "NOM DU PATIENT : " + name + "\n";
+        message = message + "PRENOM DU PATIENT : " + "\n";
         message = message + "NISS DU PATIENT : " + "\n\n";
         message = message + "SE LAVER \n ----------------\n";
-        for (int j = 0; j < SeLaver.getCheckboxes().size(); j++) {
-            if (SeLaver.getCheckboxes().get(j).isChecked()) {
-                message = message + "- " + SeLaver.getCheckboxes().get(j).getText() + "\n";
-            }
-        }
     }
 
     private void sendMail() {
@@ -155,5 +157,12 @@ public class EchelleKatz extends AppCompatActivity
                 + message
         );
         startActivity(Intent.createChooser(i, "Choisissez l'application \"Email\" pour envoyer votre demande :"));
+    }
+
+    @Override
+    public void sendScoreSeLaver(String score) {
+        String tag = "android:switcher:" + R.id.viewPager + ":" + 6;
+        Resume resume = (Resume) getSupportFragmentManager().findFragmentByTag(tag);
+        resume.setScore_1(score);
     }
 }

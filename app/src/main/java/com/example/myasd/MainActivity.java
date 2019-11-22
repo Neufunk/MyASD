@@ -11,9 +11,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    int clickedMenu = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +28,30 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.getMenu().getItem(0).setChecked(true);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView); //TODO: Handle the onDrawerClosed in all Activities.
+                Intent i;
+                switch (clickedMenu) {
+                    case 2:
+                        i = new Intent(MainActivity.this, Applicar.class);
+                        startActivity(i);
+                        break;
+                    case 3:
+                        i = new Intent(MainActivity.this, EvaluationStagiaires.class);
+                        startActivity(i);
+                        break;
+                    case 4:
+                        i = new Intent(MainActivity.this, EchelleKatz.class);
+                        startActivity(i);
+                        break;
+                    default:
+                        i = new Intent(MainActivity.this, MainActivity.class);
+                        startActivity(i);
+                }
+            }
+        };
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
@@ -71,18 +97,14 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
 
         } else if (id == R.id.nav_applicar) {
-            Intent i = new Intent(this, Applicar.class);
-            // i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-            startActivity(i);
+            clickedMenu = 2;
         } else if (id == R.id.nav_stagiaires) {
-            Intent i = new Intent(this, EvaluationStagiaires.class);
-            startActivity(i);
+            clickedMenu = 3;
         } else if (id == R.id.nav_katz) {
-            Intent i = new Intent(this, EchelleKatz.class);
-            startActivity(i);
-        //} else if (id == R.id.nav_share) {
+            clickedMenu = 4;
+            //} else if (id == R.id.nav_share) {
 
-        //} else if (id == R.id.nav_send) {
+            //} else if (id == R.id.nav_send) {
 
         }
 
