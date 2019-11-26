@@ -68,17 +68,6 @@ public class EchelleKatz extends AppCompatActivity
                 }
             }
         });
-
-        FloatingActionButton fab_calculate = findViewById(R.id.fab_calcultate);
-        fab_calculate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "PAS ENCORE IMPL", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-
-        });
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
 
