@@ -12,99 +12,110 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/nomTextView"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textSize="15sp"
-            android:textColor="@color/Black"
-            android:gravity="center"
-            android:text="NOM" />
+            android:layout_height="60dp"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/prenomTextView"
+            <TextView
+                android:id="@+id/nomTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="NOM"
+                android:textColor="@color/Black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/prenomTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="PRENOM"
+                android:textColor="@color/Black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/nissTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="LOCALITÉ"
+                android:textColor="@color/Black"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textSize="15sp"
-            android:textColor="@color/Black"
-            android:gravity="center"
-            android:text="PRENOM" />
+            android:layout_height="60dp"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/nissTextView"
+            <EditText
+                android:id="@+id/inputNom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="9"
+                android:gravity="center"
+                android:hint="Nom"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/inputPrenom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="9"
+                android:gravity="center"
+                android:hint="Prenom"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/inputNiss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="9"
+                android:gravity="center"
+                android:hint="Localité"
+                android:inputType="textPersonName" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textSize="15sp"
-            android:textColor="@color/Black"
+            android:layout_height="30dp"
             android:gravity="center"
-            android:text="NISS" />
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Personne désorientée" />
+        </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/inputNom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="9"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
             android:gravity="center"
-            android:inputType="text"
-            android:hint="Nom" />
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/inputPrenom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="9"
-            android:gravity="center"
-            android:inputType="textPersonName"
-            android:hint="Prenom" />
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:text="CENTRE : "
+                android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/inputNiss"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="9"
-            android:gravity="center"
-            android:inputType="textPersonName"
-            android:hint="NISS" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="100dp"
-            android:layout_marginStart="80dp"
-            android:layout_height="match_parent"
-            android:textSize="20sp"
-            android:text="CENTRE : "/>
-
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:entries="@array/centre_name"/>
-
-
-    </LinearLayout>
-
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:entries="@array/centre_name" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -116,11 +127,11 @@
                 android:id="@+id/textView2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 android:paddingStart="50dp"
-                android:layout_gravity="center"
-                android:textColor="@color/Black"
-                android:text="SE LAVER : " />
+                android:text="SE LAVER : "
+                android:textColor="@color/Black" />
 
             <EditText
                 android:id="@+id/inputScore1"
@@ -128,10 +139,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="50dp"
                 android:ems="9"
-                android:enabled="false"
+                android:focusable="false"
                 android:gravity="center"
-                android:inputType="text"
-                android:hint="SCORE" />
+                android:hint="NO_SCORE"
+                android:inputType="text" />
         </LinearLayout>
 
         <LinearLayout
@@ -143,11 +154,11 @@
                 android:id="@+id/textView3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 android:paddingStart="50dp"
-                android:layout_gravity="center"
-                android:textColor="@color/Black"
-                android:text="S'HABILLER : " />
+                android:text="S'HABILLER : "
+                android:textColor="@color/Black" />
 
             <EditText
                 android:id="@+id/inputScore2"
@@ -155,9 +166,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="50dp"
                 android:ems="9"
+                android:focusable="false"
                 android:gravity="center"
-                android:inputType="text"
-                android:hint="SCORE" />
+                android:hint="NO_SCORE"
+                android:inputType="text" />
 
         </LinearLayout>
 
@@ -170,11 +182,11 @@
                 android:id="@+id/textView4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 android:paddingStart="50dp"
-                android:layout_gravity="center"
-                android:textColor="@color/Black"
-                android:text="TRANSFERT ET DÉPLACEMENT : " />
+                android:text="TRANSFERT ET DÉPLACEMENT : "
+                android:textColor="@color/Black" />
 
             <EditText
                 android:id="@+id/inputScore3"
@@ -182,9 +194,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="50dp"
                 android:ems="9"
+                android:focusable="false"
                 android:gravity="center"
-                android:inputType="text"
-                android:hint="SCORE" />
+                android:hint="NO_SCORE"
+                android:inputType="text" />
 
         </LinearLayout>
 
@@ -197,11 +210,11 @@
                 android:id="@+id/textView5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 android:paddingStart="50dp"
-                android:layout_gravity="center"
-                android:textColor="@color/Black"
-                android:text="TOILETTE : " />
+                android:text="TOILETTE : "
+                android:textColor="@color/Black" />
 
             <EditText
                 android:id="@+id/inputScore4"
@@ -209,9 +222,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="50dp"
                 android:ems="9"
+                android:focusable="false"
                 android:gravity="center"
-                android:inputType="text"
-                android:hint="SCORE" />
+                android:hint="NO_SCORE"
+                android:inputType="text" />
 
         </LinearLayout>
 
@@ -224,11 +238,11 @@
                 android:id="@+id/textView6"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 android:paddingStart="50dp"
-                android:layout_gravity="center"
-                android:textColor="@color/Black"
-                android:text="CONTINENCE : " />
+                android:text="CONTINENCE : "
+                android:textColor="@color/Black" />
 
             <EditText
                 android:id="@+id/inputScore5"
@@ -236,10 +250,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="50dp"
                 android:ems="9"
+                android:focusable="false"
                 android:gravity="center"
-                android:inputType="text"
-                android:hint="SCORE" />
+                android:hint="NO_SCORE"
+                android:inputType="text" />
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -250,11 +266,11 @@
                 android:id="@+id/textView7"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 android:paddingStart="50dp"
-                android:layout_gravity="center"
-                android:textColor="@color/Black"
-                android:text="MANGER : " />
+                android:text="MANGER : "
+                android:textColor="@color/Black" />
 
             <EditText
                 android:id="@+id/inputScore6"
@@ -262,9 +278,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="50dp"
                 android:ems="9"
+                android:focusable="false"
                 android:gravity="center"
-                android:inputType="text"
-                android:hint="SCORE" />
+                android:hint="NO_SCORE"
+                android:inputType="text" />
         </LinearLayout>
 
         <TextView
@@ -273,8 +290,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:textSize="20sp"
-            android:textColor="@color/Black"/>
+            android:textColor="@color/Black"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView9"
@@ -283,9 +300,9 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:gravity="center"
-            android:textSize="20sp"
+            android:text="FORFAIT DU PATIENT "
             android:textColor="@color/Black"
-            android:text="FORFAIT DU PATIENT " />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/forfaitScore"
@@ -294,10 +311,9 @@
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
             android:ems="9"
+            android:focusable="false"
             android:gravity="center"
-            android:inputType="text"
-            android:hint="SCORE" />
-
-
+            android:hint="NO_SCORE"
+            android:inputType="text" />
     </LinearLayout>
 </ScrollView>

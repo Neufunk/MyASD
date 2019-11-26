@@ -34,7 +34,7 @@
         <CheckBox
             android:id="@+id/checkBox3"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:text="S’aide, éventuellement pour le transfert via auxiliaire mécanique : perroquet,"
             android:textSize="18sp" />
@@ -42,7 +42,7 @@
         <CheckBox
             android:id="@+id/checkBox4"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="70dp"
             android:layout_weight="1"
             android:text="S’aide au déplacement via auxiliaire mécanique : béquilles, tribune, chaise roulante avec, si nécessaire, l’aide occasionnelle d’un tiers."
             android:textSize="18sp" />
@@ -109,6 +109,14 @@
             android:layout_height="50dp"
             android:layout_weight="1"
             android:text="Grabataire"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/checkBox13"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="Voiturette électrique"
             android:textSize="18sp" />
 
 

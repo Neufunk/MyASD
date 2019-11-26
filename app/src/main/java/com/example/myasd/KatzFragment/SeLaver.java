@@ -187,6 +187,13 @@ public class SeLaver extends Fragment  {
                     checkBox6.setEnabled(false);
                     checkBox7.setEnabled(false);
                     checkBox8.setEnabled(false);
+                    checkBox1.setChecked(false);
+                    checkBox2.setChecked(false);
+                    checkBox3.setChecked(false);
+                    checkBox4.setChecked(false);
+                    checkBox5.setChecked(false);
+                    checkBox6.setChecked(false);
+                    checkBox8.setChecked(false);
                 } else {
                     checkBox1.setEnabled(true);
                     checkBox2.setEnabled(true);
@@ -203,34 +210,14 @@ public class SeLaver extends Fragment  {
     }
 
     private void calculateScore() {
-        if (checkBox1.isChecked() && checkBox2.isChecked() && checkBox5.isChecked() && checkBox6.isChecked()) {
-            SS.sendScoreSeLaver("3");
-        } else if (checkBox1.isChecked() && checkBox4.isChecked() && checkBox5.isChecked() && checkBox6.isChecked()) {
-            SS.sendScoreSeLaver("3");
-        } else if (checkBox2.isChecked() && checkBox3.isChecked() && checkBox5.isChecked() && checkBox6.isChecked()) {
-            SS.sendScoreSeLaver("3");
-        } else if (checkBox3.isChecked() && checkBox4.isChecked() && checkBox5.isChecked() && checkBox6.isChecked()) {
+        if (checkBox6.isChecked()) {
             SS.sendScoreSeLaver("3");
         } else if (checkBox3.isChecked() && checkBox4.isChecked() && checkBox5.isChecked()) {
             SS.sendScoreSeLaver("3");
-        } else if (checkBox1.isChecked() && checkBox2.isChecked() && checkBox5.isChecked()) {
-            SS.sendScoreSeLaver("2");
-        } else if (checkBox1.isChecked() && checkBox4.isChecked() && checkBox5.isChecked()) {
-            SS.sendScoreSeLaver("2");
-        } else if (checkBox2.isChecked() && checkBox3.isChecked() && checkBox5.isChecked()) {
+        } else if (checkBox5.isChecked()) {
             SS.sendScoreSeLaver("2");
         } else if (checkBox3.isChecked() && checkBox4.isChecked()) {
             SS.sendScoreSeLaver("3");
-        } else if (checkBox5.isChecked() && checkBox6.isChecked()) {
-            SS.sendScoreSeLaver("3");
-        } else if (checkBox1.isChecked() && checkBox5.isChecked()) {
-            SS.sendScoreSeLaver("2");
-        } else if (checkBox2.isChecked() && checkBox5.isChecked()) {
-            SS.sendScoreSeLaver("2");
-        } else if (checkBox3.isChecked() && checkBox5.isChecked()) {
-            SS.sendScoreSeLaver("2");
-        } else if (checkBox4.isChecked() && checkBox5.isChecked()) {
-            SS.sendScoreSeLaver("2");
         } else if (checkBox1.isChecked() && checkBox4.isChecked()) {
             SS.sendScoreSeLaver("2");
         } else if (checkBox2.isChecked() && checkBox3.isChecked()) {
@@ -244,8 +231,6 @@ public class SeLaver extends Fragment  {
         } else if (checkBox3.isChecked()) {
             SS.sendScoreSeLaver("2");
         } else if (checkBox4.isChecked()) {
-            SS.sendScoreSeLaver("2");
-        } else if (checkBox5.isChecked()) {
             SS.sendScoreSeLaver("2");
         } else if (checkBox7.isChecked()) {
             SS.sendScoreSeLaver("2");
@@ -269,7 +254,7 @@ public class SeLaver extends Fragment  {
         try {
             SS = (SendScore) getActivity();
         } catch (ClassCastException e) {
-            throw new ClassCastException("Error in retrieving data. Please try again");
+            throw new ClassCastException("Error in retrieving data from SE_LAVER. Please try again");
         }
     }
 }

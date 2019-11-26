@@ -41,6 +41,7 @@ public class Applicar extends AppCompatActivity
     Spinner problemTypeSpinner;
     CheckBox keyLocationCheckBox;
     EditText commentArea;
+    int clickedMenu = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +64,30 @@ public class Applicar extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView); //TODO: Handle the onDrawerClosed in all Activities.
+                Intent i;
+                switch (clickedMenu) {
+                    case 1:
+                        i = new Intent(Applicar.this, MainActivity.class);
+                        startActivity(i);
+                        break;
+                    case 3:
+                        i = new Intent(Applicar.this, EvaluationStagiaires.class);
+                        startActivity(i);
+                        break;
+                    case 4:
+                        i = new Intent(Applicar.this, EchelleKatz.class);
+                        startActivity(i);
+                        break;
+                    default:
+                        i = new Intent(Applicar.this, MainActivity.class);
+                        startActivity(i);
+                }
+            }
+        };
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
@@ -168,15 +192,15 @@ public class Applicar extends AppCompatActivity
 
         if (id == R.id.nav_home) {
             Intent i = new Intent(this, MainActivity.class);
-            startActivity(i);
+            clickedMenu = 1;
         } else if (id == R.id.nav_applicar) {
 
         } else if (id == R.id.nav_stagiaires) {
             Intent i = new Intent(this, EvaluationStagiaires.class);
-            startActivity(i);
+            clickedMenu = 3;
         } else if (id == R.id.nav_katz) {
             Intent i = new Intent(this, EchelleKatz.class);
-            startActivity(i);
+            clickedMenu = 4;
             //} else if (id == R.id.nav_share) {
 
             //} else if (id == R.id.nav_send) {

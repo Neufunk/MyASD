@@ -16,7 +16,7 @@
 
 
         <CheckBox
-            android:id="@+id/checkBox5"
+            android:id="@+id/checkBox1"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_weight="1"
@@ -24,7 +24,7 @@
             android:textSize="18sp" />
 
         <CheckBox
-            android:id="@+id/checkBox6"
+            android:id="@+id/checkBox2"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_weight="1"
@@ -32,7 +32,7 @@
             android:textSize="18sp" />
 
         <CheckBox
-            android:id="@+id/checkBox7"
+            android:id="@+id/checkBox3"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_weight="1"
@@ -40,7 +40,7 @@
             android:textSize="18sp" />
 
         <CheckBox
-            android:id="@+id/checkBox8"
+            android:id="@+id/checkBox4"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_weight="1"
@@ -48,7 +48,7 @@
             android:textSize="18sp" />
 
         <CheckBox
-            android:id="@+id/checkBox9"
+            android:id="@+id/checkBox5"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_weight="1"
@@ -56,7 +56,7 @@
             android:textSize="18sp" />
 
         <CheckBox
-            android:id="@+id/checkBox10"
+            android:id="@+id/checkBox6"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_weight="1"
@@ -64,11 +64,19 @@
             android:textSize="18sp" />
 
         <CheckBox
-            android:id="@+id/checkBox11"
+            android:id="@+id/checkBox7"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_weight="1"
-            android:text="Aide pour les orthèses/prothèses (membre supériers/et ou inférieurs) indispensable à sopn autonomie locomotrice"
+            android:text="Aide pour les orthèses/prothèses (membre supériers/et ou inférieurs) indispensable à son autonomie locomotrice"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/checkBox8"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:text="Aide complète"
             android:textSize="18sp" />
 
         <TextView

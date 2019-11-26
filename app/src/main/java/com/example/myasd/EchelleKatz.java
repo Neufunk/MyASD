@@ -16,11 +16,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.myasd.KatzFragment.Continence;
+import com.example.myasd.KatzFragment.Manger;
 import com.example.myasd.KatzFragment.Resume;
 import com.example.myasd.KatzFragment.SeLaver;
+import com.example.myasd.KatzFragment.Shabiller;
+import com.example.myasd.KatzFragment.Toilette;
+import com.example.myasd.KatzFragment.Transfert;
 
 public class EchelleKatz extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, SeLaver.SendScore {
+        implements NavigationView.OnNavigationItemSelectedListener,
+        SeLaver.SendScore,
+        Shabiller.SendScore,
+        Transfert.SendScore,
+        Toilette.SendScore,
+        Continence.SendScore,
+        Manger.SendScore {
 
     String message;
     String name;
@@ -28,6 +39,7 @@ public class EchelleKatz extends AppCompatActivity
     TabLayout tabLayout;
     ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
+    int clickedMenu = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +48,10 @@ public class EchelleKatz extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        viewPager = findViewById(R.id.viewPager);
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(viewPagerAdapter);
-        viewPager.setOffscreenPageLimit(10);
+        viewPager.setOffscreenPageLimit(8);
         tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
@@ -71,7 +83,30 @@ public class EchelleKatz extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close){
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+                Intent i;
+                switch (clickedMenu) {
+                    case 1:
+                        i = new Intent(EchelleKatz.this, MainActivity.class);
+                        startActivity(i);
+                        break;
+                    case 2:
+                        i = new Intent(EchelleKatz.this, Applicar.class);
+                        startActivity(i);
+                        break;
+                    case 3:
+                        i = new Intent(EchelleKatz.this, EvaluationStagiaires.class);
+                        startActivity(i);
+                        break;
+                    default:
+                        i = new Intent(EchelleKatz.this, MainActivity.class);
+                        startActivity(i);
+                }
+            }
+        };
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
@@ -117,12 +152,12 @@ public class EchelleKatz extends AppCompatActivity
 
         if (id == R.id.nav_home) {
             Intent i = new Intent(this, MainActivity.class);
-            startActivity(i);
+            clickedMenu = 1;
         } else if (id == R.id.nav_applicar) {
             Intent i = new Intent(this, Applicar.class);
-            startActivity(i);
+            clickedMenu = 2;
         } else if (id == R.id.nav_stagiaires) {
-
+            clickedMenu = 3;
         } else if (id == R.id.nav_katz) {
 
             //} else if (id == R.id.nav_share) {
@@ -164,5 +199,40 @@ public class EchelleKatz extends AppCompatActivity
         String tag = "android:switcher:" + R.id.viewPager + ":" + 6;
         Resume resume = (Resume) getSupportFragmentManager().findFragmentByTag(tag);
         resume.setScore_1(score);
+    }
+
+    @Override
+    public void sendScoreShabiller(String score) {
+        String tag = "android:switcher:" + R.id.viewPager + ":" + 6;
+        Resume resume = (Resume) getSupportFragmentManager().findFragmentByTag(tag);
+        resume.setScore_2(score);
+    }
+
+    @Override
+    public void sendTransfertScore(String score) {
+        String tag = "android:switcher:" + R.id.viewPager + ":" + 6;
+        Resume resume = (Resume) getSupportFragmentManager().findFragmentByTag(tag);
+        resume.setScore_3(score);
+    }
+
+    @Override
+    public void sendScoretoilette(String score) {
+        String tag = "android:switcher:" + R.id.viewPager + ":" + 6;
+        Resume resume = (Resume) getSupportFragmentManager().findFragmentByTag(tag);
+        resume.setScore_4(score);
+    }
+
+    @Override
+    public void sendScoreContinence(String score) {
+        String tag = "android:switcher:" + R.id.viewPager + ":" + 6;
+        Resume resume = (Resume) getSupportFragmentManager().findFragmentByTag(tag);
+        resume.setScore_5(score);
+    }
+
+    @Override
+    public void sendScoreManger(String score) {
+        String tag = "android:switcher:" + R.id.viewPager + ":" + 6;
+        Resume resume = (Resume) getSupportFragmentManager().findFragmentByTag(tag);
+        resume.setScore_6(score);
     }
 }

@@ -135,6 +135,14 @@
             android:text="Comportement inadapté pour l'élimination d'urine"
             android:textSize="18sp" />
 
+        <CheckBox
+            android:id="@+id/checkBox16"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="Comportement inadapté pour l'élimination des selles"
+            android:textSize="18sp" />
+
 
 
 
