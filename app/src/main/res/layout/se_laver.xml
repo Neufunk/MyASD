@@ -15,7 +15,7 @@
         android:id="@+id/checkBox1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#eee"
+        android:background="#ddd"
         android:layout_weight="1"
         android:text="Est capable de se laver AU-DESSUS de la ceinture"
         android:textSize="18sp"/>
@@ -94,7 +94,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="Obligation de cocher 1 critère et maximum 4"/>
+        android:text="Minimum 1 critère et maximum 4"/>
 
 
 </LinearLayout>

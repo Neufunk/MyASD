@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingTop="120dp"
     tools:context=".KatzFragment.Resume">
 
@@ -75,14 +76,14 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/inputNiss"
+                android:id="@+id/inputLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="9"
                 android:gravity="center"
                 android:hint="Localité"
-                android:inputType="textPersonName" />
+                android:inputType="number" />
         </LinearLayout>
 
         <LinearLayout
@@ -112,6 +113,7 @@
                 android:textSize="20sp" />
 
             <Spinner
+                android:id="@+id/spinner"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:entries="@array/centre_name" />
@@ -315,5 +317,15 @@
             android:gravity="center"
             android:hint="NO_SCORE"
             android:inputType="text" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            app:srcCompat="@android:drawable/ic_dialog_email" />
+
     </LinearLayout>
+
 </ScrollView>

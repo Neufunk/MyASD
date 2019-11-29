@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_weight="1"
-            android:text="Est capable de s'habiller/se déshabiller au-dessus de la ceinture"
+            android:text="Est capable de s'habiller/se déshabiller AU-DESSUS de la ceinture"
             android:textSize="18sp" />
 
         <CheckBox
@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_weight="1"
-            android:text="Est capable de s'habiller/se déshabiller en dessous de la ceinture"
+            android:text="Est capable de s'habiller/se déshabiller EN-DESSOUS de la ceinture"
             android:textSize="18sp" />
 
         <CheckBox
@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:text="Aide partielle pour s'habiller et/ou se déshabiller au-dessus de la ceinture (par exemple enfiler un corset)"
+            android:text="Aide partielle pour s'habiller et/ou se déshabiller AU-DESSUS de la ceinture (par exemple enfiler un corset)"
             android:textSize="18sp" />
 
         <CheckBox
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:text="Aide partielle pour s'habiller et/ou se déshabiller en dessous de la ceinture (par exemple enfiler des bas à varices)"
+            android:text="Aide partielle pour s'habiller et/ou se déshabiller EN-DESSOUS de la ceinture (par exemple enfiler des bas à varices)"
             android:textSize="18sp" />
 
         <CheckBox
@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_weight="1"
-            android:text="Stimulation (vocale ou physique -par exemple préparer les vêtements-)"
+            android:text="Stimulation vocale ou physique (par exemple pour préparer les vêtements)"
             android:textSize="18sp" />
 
         <CheckBox
@@ -85,7 +85,7 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Obligation de cocher minimum 1 critère" />
+            android:text="Minimum 1 critère" />
 
 
     </LinearLayout>

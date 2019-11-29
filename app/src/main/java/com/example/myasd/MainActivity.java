@@ -14,7 +14,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 
 import com.example.myasd.tools.MenuSelection;
 
@@ -79,7 +78,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         final ViewGroup viewGroup = (ViewGroup) findViewById(R.id.mainGroup);
         viewGroup.removeAllViews();
-        viewGroup.addView(View.inflate(this, R.layout.activity_loading_screen, null));
+        viewGroup.addView(View.inflate(this, R.layout.loading_screen, null));
         MenuSelection.onItemSelected(item);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

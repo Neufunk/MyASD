@@ -35,7 +35,6 @@ public class Applicar extends AppCompatActivity
     TextView adresseTitle;
     CheckBox homeVehicleCheckBox, keyLocationCheckBox;
     Spinner dateSpinner1, dateSpinner2, dateSpinner3, problemTypeSpinner;
-    MenuSelection menuSelection = new MenuSelection();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -164,9 +163,9 @@ public class Applicar extends AppCompatActivity
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        final ViewGroup viewGroup = (ViewGroup) findViewById(R.id.mainGroup);
+        final ViewGroup viewGroup = findViewById(R.id.mainGroup);
         viewGroup.removeAllViews();
-        viewGroup.addView(View.inflate(this, R.layout.activity_loading_screen, null));
+        viewGroup.addView(View.inflate(this, R.layout.loading_screen, null));
         MenuSelection.onItemSelected(item);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

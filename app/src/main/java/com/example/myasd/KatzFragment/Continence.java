@@ -237,7 +237,7 @@ public class Continence extends Fragment {
             SS.sendScoreContinence("3");
         } else if (checkBox8.isChecked()) {
             SS.sendScoreContinence("3");
-        } else if (checkBox5.isChecked() || checkBox6.isChecked() || checkBox7.isChecked() || checkBox9.isChecked() || checkBox10.isChecked() ||checkBox11.isChecked() || checkBox12.isChecked()) {
+        } else if (checkBox3.isChecked() || checkBox4.isChecked() || checkBox5.isChecked() || checkBox6.isChecked() || checkBox7.isChecked() || checkBox9.isChecked() || checkBox10.isChecked() ||checkBox11.isChecked() || checkBox12.isChecked()) {
             SS.sendScoreContinence("2");
         } else if (checkBox2.isChecked() || checkBox1.isChecked()) {
             SS.sendScoreContinence("1");

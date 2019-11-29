@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:text="Perte involontaire d'urine occasionnelle diurne"
+            android:text="Perte involontaire d'urine OCCASIONNELLE DIURNE"
             android:textSize="18sp" />
 
         <CheckBox
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:text="Perte involontaire d'urine occasionnele nocturne"
+            android:text="Perte d'urine OCCASIONNELLE NOCTURNE"
             android:textSize="18sp" />
 
         <CheckBox
@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:text="Perte involontaire d'urine permanente diurne"
+            android:text="Perte d'urine PERMANENTE DIURNE"
             android:textSize="18sp" />
 
         <CheckBox
@@ -60,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:text="Perte involontaire d'urine permanente nocturne"
+            android:text="Perte d'urine PERMANENTE NOCTURNE"
             android:textSize="18sp" />
 
         <CheckBox
@@ -68,7 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:text="Perte involontaire de selles occasionnelle"
+            android:text="Perte de selles OCCASIONNELLE"
             android:textSize="18sp" />
 
         <CheckBox
@@ -76,7 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:text="Perte involontaire de selles permanente"
+            android:text="Perte de selles PERMANENTE"
             android:textSize="18sp" />
 
         <CheckBox
@@ -149,10 +149,10 @@
         <TextView
             android:id="@+id/textView1"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Obligation de cocher minimum 1 critère" />
+            android:text="Minimum 1 critère" />
 
 
     </LinearLayout>

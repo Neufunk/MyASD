@@ -2,6 +2,7 @@ package com.example.myasd;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -35,13 +36,10 @@ public class EchelleKatz extends AppCompatActivity
         Continence.SendScore,
         Manger.SendScore {
 
-    String message;
-    String name;
-
+    String message, name, forfait;
     TabLayout tabLayout;
     ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
-    int clickedMenu = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,23 +51,10 @@ public class EchelleKatz extends AppCompatActivity
         viewPager = findViewById(R.id.viewPager);
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(viewPagerAdapter);
-        viewPager.setOffscreenPageLimit(8);
+        viewPager.setOffscreenPageLimit(10);
         tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (checkEmpty()) {
-                    setMessage();
-                    sendMail();
-                } else {
-                    Snackbar.make(view, "Veuillez corriger les erreurs", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                }
-            }
-        });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
 
@@ -118,40 +103,15 @@ public class EchelleKatz extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        final ViewGroup viewGroup = (ViewGroup) findViewById(R.id.mainGroup);
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        final ViewGroup viewGroup = findViewById(R.id.mainGroup);
         viewGroup.removeAllViews();
-        viewGroup.addView(View.inflate(this, R.layout.activity_loading_screen, null));
+        viewGroup.addView(View.inflate(this, R.layout.loading_screen, null));
         MenuSelection.onItemSelected(item);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    private Boolean checkEmpty() {
-        return true;
-    }
-
-    private void setMessage() {
-        message = "NOM DU PATIENT : " + name + "\n";
-        message = message + "PRENOM DU PATIENT : " + "\n";
-        message = message + "NISS DU PATIENT : " + "\n\n";
-        message = message + "SE LAVER \n ----------------\n";
-    }
-
-    private void sendMail() {
-        Intent i = new Intent(Intent.ACTION_SEND);
-        i.setType("message/rfc822");
-        i.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"informatique@asd-namur.be"});
-        i.putExtra(Intent.EXTRA_SUBJECT, "Nouvelle Échelle de Katz");
-        i.putExtra(android.content.Intent.EXTRA_TEXT, "NOUVELLE ÉCHELLE DE KATZ\n"
-
-                + System.getProperty("line.separator")
-                + message
-        );
-        startActivity(Intent.createChooser(i, "Choisissez l'application \"Email\" pour envoyer votre demande :"));
     }
 
     @Override
