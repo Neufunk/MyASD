@@ -9,6 +9,7 @@
     tools:showIn="@layout/app_bar_applicar">
 
     <ScrollView
+        android:id="@+id/mainGroup"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"

@@ -10,10 +10,6 @@ import android.widget.CheckBox;
 
 import com.example.myasd.R;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class Toilette extends Fragment {
 
     CheckBox checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6;

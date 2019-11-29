@@ -8,16 +8,23 @@
     tools:context="com.example.myasd.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
+    <LinearLayout
+        android:id="@+id/mainGroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="298dp"
-        android:layout_height="298dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginBottom="129dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="150dp"
         android:contentDescription="@string/image_description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/maison_color" />
+    </LinearLayout>
+
+
 </android.support.constraint.ConstraintLayout>

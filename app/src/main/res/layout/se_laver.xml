@@ -4,7 +4,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".KatzFragment.SeLaver"
     android:orientation="vertical"
     android:paddingTop="120dp"
@@ -16,8 +15,9 @@
         android:id="@+id/checkBox1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#eee"
         android:layout_weight="1"
-        android:text="Est capable de se laver au-dessus de la ceinture"
+        android:text="Est capable de se laver AU-DESSUS de la ceinture"
         android:textSize="18sp"/>
 
     <CheckBox
@@ -25,15 +25,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="Est capable de se laver au-dessous de la ceinture"
+        android:text="Est capable de se laver AU-DESSOUS de la ceinture"
         android:textSize="18sp" />
 
     <CheckBox
         android:id="@+id/checkBox3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#eee"
         android:layout_weight="1"
-        android:text="Aide pour se laver au-dessus de la ceinture"
+        android:text="Aide pour se laver AU-DESSUS de la ceinture"
         android:textSize="18sp" />
 
     <CheckBox
@@ -41,13 +42,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="Aide pour se laver au-dessus de la ceinture"
+        android:text="Aide pour se laver AU-DESSOUS de la ceinture"
         android:textSize="18sp" />
 
     <CheckBox
         android:id="@+id/checkBox5"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#eee"
         android:layout_weight="1"
         android:text="Stimulation (vocale ou physique)"
         android:textSize="18sp" />
@@ -64,6 +66,7 @@
         android:id="@+id/checkBox7"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#eee"
         android:layout_weight="1"
         android:text="Seul le dos OU les pieds sont lavés"
         android:textSize="18sp" />
@@ -80,6 +83,7 @@
         android:id="@+id/checkBox9"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#eee"
         android:layout_weight="1"
         android:text="Aide complète"
         android:textSize="18sp" />

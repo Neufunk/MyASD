@@ -19,6 +19,7 @@
     <string name="menu_send">Send</string>
     <string name="applicar">Applicar</string>
     <string name="title_activity_applicar">Applicar</string>
+    <string name="title_activity_loading"> </string>
     <string name="title_activity_katz">Echelles de Katz</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>

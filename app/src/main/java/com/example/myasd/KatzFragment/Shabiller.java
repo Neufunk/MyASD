@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 
 import com.example.myasd.R;
+import com.example.myasd.tools.CheckboxControl;
 
 
 /**
@@ -55,11 +56,9 @@ public class Shabiller extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox1.isChecked()) {
-                    checkBox3.setEnabled(false);
-                    checkBox8.setEnabled(false);
+                    CheckboxControl.setDisabled(checkBox3, checkBox8);
                 } else {
-                    checkBox3.setEnabled(true);
-                    checkBox8.setEnabled(true);
+                    CheckboxControl.setEnabled(checkBox3, checkBox8);
                 }
                 calculateScore();
             }
@@ -68,11 +67,9 @@ public class Shabiller extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox2.isChecked()) {
-                    checkBox4.setEnabled(false);
-                    checkBox8.setEnabled(false);
+                    CheckboxControl.setDisabled(checkBox4, checkBox8);
                 } else {
-                    checkBox4.setEnabled(true);
-                    checkBox8.setEnabled(true);
+                    CheckboxControl.setEnabled(checkBox3, checkBox8);
                 }
                 calculateScore();
             }
@@ -81,11 +78,9 @@ public class Shabiller extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox3.isChecked()) {
-                    checkBox1.setEnabled(false);
-                    checkBox8.setEnabled(false);
+                    CheckboxControl.setDisabled(checkBox1, checkBox8);
                 } else {
-                    checkBox1.setEnabled(true);
-                    checkBox8.setEnabled(true);
+                    CheckboxControl.setEnabled(checkBox1, checkBox8);
                 }
                 calculateScore();
             }
@@ -94,11 +89,9 @@ public class Shabiller extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox4.isChecked()) {
-                    checkBox2.setEnabled(false);
-                    checkBox8.setEnabled(false);
+                    CheckboxControl.setDisabled(checkBox2, checkBox8);
                 } else {
-                    checkBox2.setEnabled(true);
-                    checkBox8.setEnabled(true);
+                    CheckboxControl.setEnabled(checkBox2, checkBox8);
                 }
                 calculateScore();
             }
@@ -107,9 +100,9 @@ public class Shabiller extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox5.isChecked()) {
-                    checkBox8.setEnabled(false);
+                    CheckboxControl.setDisabled(checkBox8);
                 } else {
-                    checkBox8.setEnabled(true);
+                    CheckboxControl.setEnabled(checkBox8);
                 }
                 calculateScore();
             }
@@ -118,9 +111,9 @@ public class Shabiller extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox6.isChecked()) {
-                    checkBox8.setEnabled(false);
+                    CheckboxControl.setDisabled(checkBox8);
                 } else {
-                    checkBox8.setEnabled(true);
+                    CheckboxControl.setEnabled(checkBox8);
                 }
                 calculateScore();
             }
@@ -129,9 +122,9 @@ public class Shabiller extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox6.isChecked()) {
-                    checkBox8.setEnabled(false);
+                    CheckboxControl.setDisabled(checkBox8);
                 } else {
-                    checkBox8.setEnabled(true);
+                    CheckboxControl.setEnabled(checkBox8);
                 }
                 calculateScore();
             }
@@ -140,58 +133,21 @@ public class Shabiller extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox8.isChecked()) {
-                    checkBox1.setEnabled(false);
-                    checkBox2.setEnabled(false);
-                    checkBox3.setEnabled(false);
-                    checkBox4.setEnabled(false);
-                    checkBox5.setEnabled(false);
-                    checkBox6.setEnabled(false);
-                    checkBox7.setEnabled(false);
-
-                    checkBox1.setChecked(false);
-                    checkBox2.setChecked(false);
-                    checkBox3.setChecked(false);
-                    checkBox4.setChecked(false);
-                    checkBox5.setChecked(false);
-                    checkBox6.setChecked(false);
+                    CheckboxControl.setDisabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7);
                 } else {
-                    checkBox1.setEnabled(true);
-                    checkBox2.setEnabled(true);
-                    checkBox3.setEnabled(true);
-                    checkBox4.setEnabled(true);
-                    checkBox5.setEnabled(true);
-                    checkBox6.setEnabled(true);
-                    checkBox7.setEnabled(true);
+                    CheckboxControl.setEnabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7);
                 }
                 calculateScore();
             }
         });
     }
 
-    private void calculateScore(){
-        if (checkBox2.isChecked() && checkBox3.isChecked() && checkBox5.isChecked() && checkBox6.isChecked() && checkBox8.isChecked()) {
-            SS.sendScoreShabiller("3");
-        } else if (checkBox1.isChecked() && checkBox2.isChecked() && checkBox5.isChecked() && checkBox6.isChecked() && checkBox8.isChecked()) {
-            SS.sendScoreShabiller("3");
-        } else if (checkBox3.isChecked() && checkBox4.isChecked() && checkBox5.isChecked() && checkBox6.isChecked() && checkBox8.isChecked()) {
-            SS.sendScoreShabiller("3");
-        } else if (checkBox1.isChecked() && checkBox4.isChecked() && checkBox5.isChecked() && checkBox6.isChecked() && checkBox8.isChecked()) {
-            SS.sendScoreShabiller("3");
-        } else if (checkBox1.isChecked() && checkBox2.isChecked() && checkBox5.isChecked() && checkBox6.isChecked()) {
-            SS.sendScoreShabiller("3");
-        }  else if (checkBox3.isChecked() && checkBox4.isChecked() && checkBox5.isChecked() && checkBox6.isChecked()) {
-            SS.sendScoreShabiller("3");
-        } else if (checkBox1.isChecked() && checkBox4.isChecked() && checkBox5.isChecked() && checkBox6.isChecked()) {
-            SS.sendScoreShabiller("3");
-        }  else if (checkBox2.isChecked() && checkBox3.isChecked() && checkBox5.isChecked() && checkBox6.isChecked()) {
-            SS.sendScoreShabiller("3");
-        } else if (checkBox3.isChecked() && checkBox4.isChecked() && checkBox5.isChecked() && checkBox8.isChecked()) {
-            SS.sendScoreShabiller("3");
-        } else if (checkBox3.isChecked() && checkBox4.isChecked() && checkBox8.isChecked()) {
+    private void calculateScore() {
+        if (checkBox8.isChecked()) {
+            SS.sendScoreShabiller("4");
+        } else if (checkBox7.isChecked() || checkBox6.isChecked()) {
             SS.sendScoreShabiller("3");
         } else if (checkBox3.isChecked() && checkBox4.isChecked() && checkBox5.isChecked()) {
-            SS.sendScoreShabiller("3");
-        } else if (checkBox5.isChecked() && checkBox6.isChecked() && checkBox8.isChecked()) {
             SS.sendScoreShabiller("3");
         } else if (checkBox1.isChecked() && checkBox2.isChecked() && checkBox5.isChecked()) {
             SS.sendScoreShabiller("2");
@@ -217,12 +173,6 @@ public class Shabiller extends Fragment {
             SS.sendScoreShabiller("3");
         } else if (checkBox5.isChecked() && checkBox6.isChecked()) {
             SS.sendScoreShabiller("3");
-        } else if (checkBox3.isChecked() && checkBox8.isChecked()) {
-            SS.sendScoreShabiller("3");
-        } else if (checkBox4.isChecked() && checkBox8.isChecked()) {
-            SS.sendScoreShabiller("2");
-        } else if (checkBox8.isChecked() && checkBox8.isChecked()) {
-            SS.sendScoreShabiller("4");
         } else if (checkBox1.isChecked()) {
             SS.sendScoreShabiller("1");
         } else if (checkBox2.isChecked()) {
@@ -233,10 +183,8 @@ public class Shabiller extends Fragment {
             SS.sendScoreShabiller("2");
         } else if (checkBox5.isChecked()) {
             SS.sendScoreShabiller("2");
-        } else if (checkBox8.isChecked()) {
-            SS.sendScoreShabiller("3");
-        } else if (checkBox8.isChecked()) {
-            SS.sendScoreShabiller("4");
+        } else {
+            SS.sendScoreShabiller("NO_SCORE");
         }
     }
 

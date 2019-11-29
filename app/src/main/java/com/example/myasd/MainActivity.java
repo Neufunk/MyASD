@@ -2,6 +2,7 @@ package com.example.myasd;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
@@ -12,14 +13,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ProgressBar;
+
+import com.example.myasd.tools.MenuSelection;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    int clickedMenu = 0;
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -31,25 +34,9 @@ public class MainActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
             @Override
             public void onDrawerClosed(View drawerView) {
-                super.onDrawerClosed(drawerView); //TODO: Handle the onDrawerClosed in all Activities.
-                Intent i;
-                switch (clickedMenu) {
-                    case 2:
-                        i = new Intent(MainActivity.this, Applicar.class);
-                        startActivity(i);
-                        break;
-                    case 3:
-                        i = new Intent(MainActivity.this, EvaluationStagiaires.class);
-                        startActivity(i);
-                        break;
-                    case 4:
-                        i = new Intent(MainActivity.this, EchelleKatz.class);
-                        startActivity(i);
-                        break;
-                    default:
-                        i = new Intent(MainActivity.this, MainActivity.class);
-                        startActivity(i);
-                }
+                super.onDrawerClosed(drawerView);
+                Intent selectedActivity = MenuSelection.launchSelectedItem(MainActivity.this);
+                startActivity(selectedActivity);
             }
         };
         drawer.addDrawerListener(toggle);
@@ -88,26 +75,12 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_home) {
-
-        } else if (id == R.id.nav_applicar) {
-            clickedMenu = 2;
-        } else if (id == R.id.nav_stagiaires) {
-            clickedMenu = 3;
-        } else if (id == R.id.nav_katz) {
-            clickedMenu = 4;
-            //} else if (id == R.id.nav_share) {
-
-            //} else if (id == R.id.nav_send) {
-
-        }
-
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        final ViewGroup viewGroup = (ViewGroup) findViewById(R.id.mainGroup);
+        viewGroup.removeAllViews();
+        viewGroup.addView(View.inflate(this, R.layout.activity_loading_screen, null));
+        MenuSelection.onItemSelected(item);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

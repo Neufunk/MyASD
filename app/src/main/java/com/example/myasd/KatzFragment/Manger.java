@@ -184,8 +184,10 @@ public class Manger extends Fragment {
             SS.sendScoreManger("3");
         } else if (checkBox7.isChecked() || checkBox6.isChecked() || checkBox5.isChecked() || checkBox4.isChecked() || checkBox3.isChecked()) {
             SS.sendScoreManger("2");
-        } else {
+        } else if (checkBox2.isChecked() || checkBox1.isChecked()) {
             SS.sendScoreManger("1");
+        } else {
+            SS.sendScoreManger("NO_SCORE");
         }
     }
 

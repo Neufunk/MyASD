@@ -241,6 +241,8 @@ public class Continence extends Fragment {
             SS.sendScoreContinence("2");
         } else if (checkBox2.isChecked() || checkBox1.isChecked()) {
             SS.sendScoreContinence("1");
+        } else {
+            SS.sendScoreContinence("NO_SCORE");
         }
     }
 

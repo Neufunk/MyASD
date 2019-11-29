@@ -142,11 +142,7 @@ public class Resume extends Fragment {
     }
 
     private Boolean checkEmpty() {
-        if (score_1 == 0 || score_2 == 0 || score_3 == 0 || score_4 == 0 || score_5 == 0 || score_6 == 0) {
-            return false;
-        } else {
-            return true;
-        }
+        return score_1 != 0 && score_2 != 0 && score_3 != 0 && score_4 != 0 && score_5 != 0 && score_6 != 0;
     }
 
     private boolean isNumeric(String strNum) {

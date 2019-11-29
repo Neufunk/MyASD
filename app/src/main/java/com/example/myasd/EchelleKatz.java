@@ -15,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.example.myasd.KatzFragment.Continence;
 import com.example.myasd.KatzFragment.Manger;
@@ -23,6 +24,7 @@ import com.example.myasd.KatzFragment.SeLaver;
 import com.example.myasd.KatzFragment.Shabiller;
 import com.example.myasd.KatzFragment.Toilette;
 import com.example.myasd.KatzFragment.Transfert;
+import com.example.myasd.tools.MenuSelection;
 
 public class EchelleKatz extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
@@ -76,24 +78,7 @@ public class EchelleKatz extends AppCompatActivity
             @Override
             public void onDrawerClosed(View drawerView) {
                 super.onDrawerClosed(drawerView);
-                Intent i;
-                switch (clickedMenu) {
-                    case 1:
-                        i = new Intent(EchelleKatz.this, MainActivity.class);
-                        startActivity(i);
-                        break;
-                    case 2:
-                        i = new Intent(EchelleKatz.this, Applicar.class);
-                        startActivity(i);
-                        break;
-                    case 3:
-                        i = new Intent(EchelleKatz.this, EvaluationStagiaires.class);
-                        startActivity(i);
-                        break;
-                    default:
-                        i = new Intent(EchelleKatz.this, MainActivity.class);
-                        startActivity(i);
-                }
+                startActivity(new Intent(MenuSelection.launchSelectedItem(EchelleKatz.this)));
             }
         };
         drawer.addDrawerListener(toggle);
@@ -136,24 +121,10 @@ public class EchelleKatz extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_home) {
-            Intent i = new Intent(this, MainActivity.class);
-            clickedMenu = 1;
-        } else if (id == R.id.nav_applicar) {
-            Intent i = new Intent(this, Applicar.class);
-            clickedMenu = 2;
-        } else if (id == R.id.nav_stagiaires) {
-            clickedMenu = 3;
-        } else if (id == R.id.nav_katz) {
-
-            //} else if (id == R.id.nav_share) {
-
-            //} else if (id == R.id.nav_send) {
-
-        }
+        final ViewGroup viewGroup = (ViewGroup) findViewById(R.id.mainGroup);
+        viewGroup.removeAllViews();
+        viewGroup.addView(View.inflate(this, R.layout.activity_loading_screen, null));
+        MenuSelection.onItemSelected(item);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
