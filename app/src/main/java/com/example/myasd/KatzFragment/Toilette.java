@@ -7,20 +7,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 import com.example.myasd.R;
+import com.example.myasd.tools.CheckboxControl;
 
 public class Toilette extends Fragment {
 
+    CheckboxControl checkboxControl = new CheckboxControl();
     CheckBox checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6;
     SendScore SS;
+    TextView textView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.toilette, container, false);
         checkBoxManipulation(view);
+        textView = view.findViewById(R.id.textView);
+        checkboxControl.checkCriteria(textView, 3);
         return view;
     }
 
@@ -30,10 +35,9 @@ public class Toilette extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox1.isChecked()) {
-                    checkBox4.setEnabled(false);
-                    checkBox4.setChecked(false);
+                    checkboxControl.setDisabled(checkBox4);
                 } else {
-                    checkBox4.setEnabled(true);
+                    checkboxControl.setEnabled(checkBox4);
                 }
                 calculateScore();
             }
@@ -43,10 +47,9 @@ public class Toilette extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox2.isChecked()) {
-                    checkBox5.setChecked(false);
-                    checkBox5.setEnabled(false);
+                    checkboxControl.setDisabled(checkBox5);
                 } else {
-                    checkBox5.setEnabled(true);
+                    checkboxControl.setEnabled(checkBox5);
                 }
                 calculateScore();
             }
@@ -56,10 +59,9 @@ public class Toilette extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox3.isChecked()) {
-                    checkBox6.setChecked(false);
-                    checkBox6.setEnabled(false);
+                    checkboxControl.setDisabled(checkBox6);
                 } else {
-                    checkBox6.setEnabled(true);
+                    checkboxControl.setEnabled(checkBox6);
                 }
                 calculateScore();
             }
@@ -69,10 +71,9 @@ public class Toilette extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox4.isChecked()) {
-                    checkBox1.setEnabled(false);
-                    checkBox1.setChecked(false);
+                    checkboxControl.setDisabled(checkBox1);
                 } else {
-                    checkBox1.setEnabled(true);
+                    checkboxControl.setEnabled(checkBox1);
                 }
                 calculateScore();
             }
@@ -82,10 +83,9 @@ public class Toilette extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox5.isChecked()) {
-                    checkBox2.setChecked(false);
-                    checkBox2.setEnabled(false);
+                    checkboxControl.setDisabled(checkBox2);
                 } else {
-                    checkBox2.setEnabled(true);
+                    checkboxControl.setEnabled(checkBox2);
                 }
                 calculateScore();
             }
@@ -95,10 +95,9 @@ public class Toilette extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox6.isChecked()) {
-                    checkBox3.setChecked(false);
-                    checkBox3.setEnabled(false);
+                    checkboxControl.setDisabled(checkBox3);
                 } else {
-                    checkBox3.setEnabled(true);
+                    checkboxControl.setEnabled(checkBox3);
                 }
                 calculateScore();
             }
@@ -106,6 +105,7 @@ public class Toilette extends Fragment {
     }
 
     private void calculateScore(){
+        checkboxControl.checkCriteria(textView, 3);
         if (checkBox1.isChecked() && checkBox2.isChecked() && checkBox3.isChecked()) {
             SS.sendScoretoilette("1");
         } else if (checkBox1.isChecked() && checkBox2.isChecked() && checkBox6.isChecked()) {

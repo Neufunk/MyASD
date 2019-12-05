@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#fff"
+    android:baselineAligned="false"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<ScrollView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="120dp"
-    tools:context=".KatzFragment.Continence">
+    android:layout_height="wrap_content"
+    android:paddingTop="200dp"
+    app:layout_constraintBottom_toTopOf="@id/textView">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
-        <!-- TODO: Update blank fragment layout -->
-
 
         <CheckBox
             android:id="@+id/checkBox1"
@@ -27,6 +31,7 @@
             android:id="@+id/checkBox2"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:background="#ddd"
             android:layout_weight="1"
             android:text="Est continent pour les selles"
             android:textSize="18sp" />
@@ -43,6 +48,7 @@
             android:id="@+id/checkBox4"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:background="#ddd"
             android:layout_weight="1"
             android:text="Perte d'urine OCCASIONNELLE NOCTURNE"
             android:textSize="18sp" />
@@ -59,6 +65,7 @@
             android:id="@+id/checkBox6"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:background="#ddd"
             android:layout_weight="1"
             android:text="Perte d'urine PERMANENTE NOCTURNE"
             android:textSize="18sp" />
@@ -75,6 +82,7 @@
             android:id="@+id/checkBox8"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:background="#ddd"
             android:layout_weight="1"
             android:text="Perte de selles PERMANENTE"
             android:textSize="18sp" />
@@ -91,6 +99,7 @@
             android:id="@+id/checkBox10"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:background="#ddd"
             android:layout_weight="1"
             android:text="Urostomie"
             android:textSize="18sp" />
@@ -107,6 +116,7 @@
             android:id="@+id/checkBox12"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:background="#ddd"
             android:layout_weight="1"
             android:text="Autosondage"
             android:textSize="18sp" />
@@ -123,6 +133,7 @@
             android:id="@+id/checkBox14"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:background="#ddd"
             android:layout_weight="1"
             android:text="Cathétérisation par un tiers"
             android:textSize="18sp" />
@@ -139,21 +150,23 @@
             android:id="@+id/checkBox16"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:background="#ddd"
             android:layout_weight="1"
             android:text="Comportement inadapté pour l'élimination des selles"
             android:textSize="18sp" />
-
-
-
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Minimum 1 critère" />
-
-
     </LinearLayout>
 </ScrollView>
+
+    <TextView
+        android:id="@+id/textView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_weight="1"
+        android:background="#FF0000"
+        android:gravity="center"
+        android:textColor="#FFF" />
+
+</android.support.constraint.ConstraintLayout>
+

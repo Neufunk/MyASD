@@ -35,6 +35,7 @@ public class Applicar extends AppCompatActivity
     TextView adresseTitle;
     CheckBox homeVehicleCheckBox, keyLocationCheckBox;
     Spinner dateSpinner1, dateSpinner2, dateSpinner3, problemTypeSpinner;
+    MenuItem item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,9 +61,11 @@ public class Applicar extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
             @Override
             public void onDrawerClosed(View drawerView) {
-                super.onDrawerClosed(drawerView);
-                Intent selectedActivity = MenuSelection.launchSelectedItem(Applicar.this);
-                startActivity(selectedActivity);
+                if(item != null) {
+                    super.onDrawerClosed(drawerView);
+                    Intent selectedActivity = MenuSelection.launchSelectedItem(Applicar.this);
+                    startActivity(selectedActivity);
+                }
             }
         };
         drawer.addDrawerListener(toggle);
@@ -163,6 +166,7 @@ public class Applicar extends AppCompatActivity
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        this.item = item;
         final ViewGroup viewGroup = findViewById(R.id.mainGroup);
         viewGroup.removeAllViews();
         viewGroup.addView(View.inflate(this, R.layout.loading_screen, null));

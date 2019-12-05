@@ -2,20 +2,22 @@ package com.example.myasd.KatzFragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 import com.example.myasd.R;
 import com.example.myasd.tools.CheckboxControl;
 
-public class SeLaver extends Fragment  {
+public class SeLaver extends Fragment {
 
+    CheckboxControl checkboxControl = new CheckboxControl();
     SendScore SS;
-
     CheckBox checkBox1;
     CheckBox checkBox2;
     CheckBox checkBox3;
@@ -25,19 +27,21 @@ public class SeLaver extends Fragment  {
     CheckBox checkBox7;
     CheckBox checkBox8;
     CheckBox checkBox9;
+    TextView textView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(
+        return inflater.inflate(
                 R.layout.se_laver, container, false);
-        return view;
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        textView = view.findViewById(R.id.textView);
         checkBoxManipulation(view);
+        checkboxControl.checkCriteria(textView, 1);
     }
 
     private void checkBoxManipulation(View view) {
@@ -56,9 +60,9 @@ public class SeLaver extends Fragment  {
             @Override
             public void onClick(View v) {
                 if (checkBox1.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox3, checkBox9);
+                    checkboxControl.setDisabled(checkBox3, checkBox9);
                 } else {
-                    CheckboxControl.setEnabled(checkBox3, checkBox9);
+                    checkboxControl.setEnabled(checkBox3, checkBox9);
                 }
                 calculateScore();
             }
@@ -67,9 +71,9 @@ public class SeLaver extends Fragment  {
             @Override
             public void onClick(View v) {
                 if (checkBox2.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox4, checkBox9);
+                    checkboxControl.setDisabled(checkBox4, checkBox9);
                 } else {
-                    CheckboxControl.setEnabled(checkBox4, checkBox9);
+                    checkboxControl.setEnabled(checkBox4, checkBox9);
                 }
                 calculateScore();
             }
@@ -78,9 +82,9 @@ public class SeLaver extends Fragment  {
             @Override
             public void onClick(View v) {
                 if (checkBox3.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox1, checkBox9);
+                    checkboxControl.setDisabled(checkBox1, checkBox9);
                 } else {
-                    CheckboxControl.setEnabled(checkBox1, checkBox9);
+                    checkboxControl.setEnabled(checkBox1, checkBox9);
                 }
                 calculateScore();
             }
@@ -89,9 +93,9 @@ public class SeLaver extends Fragment  {
             @Override
             public void onClick(View v) {
                 if (checkBox4.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox2, checkBox9);
+                    checkboxControl.setDisabled(checkBox2, checkBox9);
                 } else {
-                    CheckboxControl.setEnabled(checkBox2, checkBox9);
+                    checkboxControl.setEnabled(checkBox2, checkBox9);
                 }
                 calculateScore();
             }
@@ -100,9 +104,9 @@ public class SeLaver extends Fragment  {
             @Override
             public void onClick(View v) {
                 if (checkBox5.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox9);
+                    checkboxControl.setDisabled(checkBox9);
                 } else {
-                    CheckboxControl.setEnabled(checkBox9);
+                    checkboxControl.setEnabled(checkBox9);
                 }
                 calculateScore();
             }
@@ -111,9 +115,9 @@ public class SeLaver extends Fragment  {
             @Override
             public void onClick(View v) {
                 if (checkBox6.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox9);
+                    checkboxControl.setDisabled(checkBox9);
                 } else {
-                    CheckboxControl.setEnabled(checkBox9);
+                    checkboxControl.setEnabled(checkBox9);
                 }
                 calculateScore();
             }
@@ -122,9 +126,9 @@ public class SeLaver extends Fragment  {
             @Override
             public void onClick(View v) {
                 if (checkBox7.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox8, checkBox9);
+                    checkboxControl.setDisabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox8, checkBox9);
                 } else {
-                    CheckboxControl.setEnabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox8, checkBox9);
+                    checkboxControl.setEnabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox8, checkBox9);
                 }
                 calculateScore();
             }
@@ -133,9 +137,9 @@ public class SeLaver extends Fragment  {
             @Override
             public void onClick(View v) {
                 if (checkBox8.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox9);
+                    checkboxControl.setDisabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox9);
                 } else {
-                    CheckboxControl.setEnabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox9);
+                    checkboxControl.setEnabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox9);
                 }
                 calculateScore();
             }
@@ -144,9 +148,9 @@ public class SeLaver extends Fragment  {
             @Override
             public void onClick(View v) {
                 if (checkBox9.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8);
+                    checkboxControl.setDisabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8);
                 } else {
-                    CheckboxControl.setEnabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8);
+                    checkboxControl.setEnabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8);
                 }
                 calculateScore();
             }
@@ -154,6 +158,7 @@ public class SeLaver extends Fragment  {
     }
 
     private void calculateScore() {
+        checkboxControl.checkCriteria(textView, 1);
         if (checkBox6.isChecked()) {
             SS.sendScoreSeLaver("3");
         } else if (checkBox3.isChecked() && checkBox4.isChecked() && checkBox5.isChecked()) {
@@ -178,9 +183,9 @@ public class SeLaver extends Fragment  {
             SS.sendScoreSeLaver("2");
         } else if (checkBox7.isChecked()) {
             SS.sendScoreSeLaver("2");
-        }  else if (checkBox8.isChecked()) {
+        } else if (checkBox8.isChecked()) {
             SS.sendScoreSeLaver("3");
-        }  else if (checkBox9.isChecked()) {
+        } else if (checkBox9.isChecked()) {
             SS.sendScoreSeLaver("4");
         } else {
             SS.sendScoreSeLaver("NO_SCORE");

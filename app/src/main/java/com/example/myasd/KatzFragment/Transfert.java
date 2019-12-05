@@ -7,15 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 import com.example.myasd.R;
+import com.example.myasd.tools.CheckboxControl;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class Transfert extends Fragment {
 
+    TextView textView;
+    CheckboxControl checkboxControl = new CheckboxControl();
     CheckBox checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8, checkBox9, checkBox10, checkBox11, checkBox12, checkBox13;
     SendScore SS;
 
@@ -23,9 +23,10 @@ public class Transfert extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.transfert, container, false);
+        textView = view.findViewById(R.id.textView);
         checkBoxManipulation(view);
+        checkboxControl.checkCriteria(textView, 2);
         return view;
     }
 
@@ -35,12 +36,11 @@ public class Transfert extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox1.isChecked()) {
-                    checkBox3.setEnabled(false);
-                    checkBox13.setEnabled(false);
+                    checkboxControl.setDisabled(checkBox3, checkBox6, checkBox7, checkBox8, checkBox9, checkBox11, checkBox12, checkBox13);
                 } else {
-                    checkBox3.setEnabled(true);
-                    checkBox13.setEnabled(true);
+                    checkboxControl.setEnabled(checkBox3, checkBox6, checkBox7, checkBox8, checkBox9, checkBox11, checkBox12, checkBox13);
                 }
+                checkboxControl.checkCriteria(textView, 2);
                 calculateScore();
             }
         });
@@ -49,22 +49,11 @@ public class Transfert extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox2.isChecked()) {
-                    checkBox4.setChecked(false);
+                    checkboxControl.setDisabled(checkBox4, checkBox10, checkBox11, checkBox12, checkBox13);
                 } else {
-                    checkBox4.setChecked(true);
+                    checkboxControl.setEnabled(checkBox4, checkBox10, checkBox11, checkBox12, checkBox13);
                 }
-                calculateScore();
-            }
-        });
-        checkBox2 = view.findViewById(R.id.checkBox2);
-        checkBox2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (checkBox2.isChecked()) {
-
-                } else {
-
-                }
+                checkboxControl.checkCriteria(textView, 2);
                 calculateScore();
             }
         });
@@ -73,10 +62,11 @@ public class Transfert extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox3.isChecked()) {
-
+                    checkboxControl.setDisabled(checkBox1, checkBox11, checkBox12, checkBox13);
                 } else {
-
+                    checkboxControl.setEnabled(checkBox1, checkBox11, checkBox12, checkBox13);
                 }
+                checkboxControl.checkCriteria(textView, 2);
                 calculateScore();
             }
         });
@@ -85,10 +75,11 @@ public class Transfert extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox4.isChecked()) {
-
+                    checkboxControl.setDisabled(checkBox2, checkBox11, checkBox12, checkBox13);
                 } else {
-
+                    checkboxControl.setEnabled(checkBox2, checkBox11, checkBox12, checkBox13);
                 }
+                checkboxControl.checkCriteria(textView, 2);
                 calculateScore();
             }
         });
@@ -97,10 +88,11 @@ public class Transfert extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox5.isChecked()) {
-
+                    checkboxControl.setDisabled(checkBox11, checkBox12, checkBox13);
                 } else {
-
+                    checkboxControl.setEnabled(checkBox11, checkBox12, checkBox13);
                 }
+                checkboxControl.checkCriteria(textView, 2);
                 calculateScore();
             }
         });
@@ -109,10 +101,11 @@ public class Transfert extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox6.isChecked()) {
-
+                    checkboxControl.setDisabled(checkBox11, checkBox12, checkBox13);
                 } else {
-
+                    checkboxControl.setEnabled(checkBox11, checkBox12, checkBox13);
                 }
+                checkboxControl.checkCriteria(textView, 2);
                 calculateScore();
             }
         });
@@ -121,10 +114,11 @@ public class Transfert extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox7.isChecked()) {
-
+                    checkboxControl.setDisabled(checkBox11, checkBox12, checkBox13);
                 } else {
-
+                    checkboxControl.setEnabled(checkBox11, checkBox12, checkBox13);
                 }
+                checkboxControl.checkCriteria(textView, 2);
                 calculateScore();
             }
         });
@@ -133,10 +127,11 @@ public class Transfert extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox8.isChecked()) {
-
+                    checkboxControl.setDisabled(checkBox11, checkBox12, checkBox13);
                 } else {
-
+                    checkboxControl.setEnabled(checkBox11, checkBox12, checkBox13);
                 }
+                checkboxControl.checkCriteria(textView, 2);
                 calculateScore();
             }
         });
@@ -145,10 +140,11 @@ public class Transfert extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox9.isChecked()) {
-
+                    checkboxControl.setDisabled(checkBox11, checkBox12, checkBox13);
                 } else {
-
+                    checkboxControl.setEnabled(checkBox11, checkBox12, checkBox13);
                 }
+                checkboxControl.checkCriteria(textView, 2);
                 calculateScore();
             }
         });
@@ -157,10 +153,11 @@ public class Transfert extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox10.isChecked()) {
-
+                    checkboxControl.setDisabled(checkBox11, checkBox12, checkBox13);
                 } else {
-
+                    checkboxControl.setEnabled(checkBox11, checkBox12, checkBox13);
                 }
+                checkboxControl.checkCriteria(textView, 2);
                 calculateScore();
             }
         });
@@ -169,9 +166,11 @@ public class Transfert extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox11.isChecked()) {
-
+                    checkboxControl.setDisabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8, checkBox9, checkBox10, checkBox12, checkBox13);
+                    checkboxControl.checkCriteria(textView, 1);
                 } else {
-
+                    checkboxControl.setEnabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8, checkBox9, checkBox10, checkBox12, checkBox13);
+                    checkboxControl.checkCriteria(textView, 2);
                 }
                 calculateScore();
             }
@@ -181,9 +180,11 @@ public class Transfert extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox12.isChecked()) {
-
+                    checkboxControl.setDisabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8, checkBox9, checkBox10, checkBox11, checkBox13);
+                    checkboxControl.checkCriteria(textView, 1);
                 } else {
-
+                    checkboxControl.setEnabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8, checkBox9, checkBox10, checkBox11, checkBox13);
+                    checkboxControl.checkCriteria(textView, 2);
                 }
                 calculateScore();
             }
@@ -193,9 +194,11 @@ public class Transfert extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox13.isChecked()) {
-
+                    checkboxControl.setDisabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8, checkBox9, checkBox10, checkBox11, checkBox12);
+                    checkboxControl.checkCriteria(textView, 1);
                 } else {
-
+                    checkboxControl.setEnabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8, checkBox9, checkBox10, checkBox11, checkBox12);
+                    checkboxControl.checkCriteria(textView, 2);
                 }
                 calculateScore();
             }

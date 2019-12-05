@@ -13,7 +13,7 @@ import com.example.myasd.R;
 
 public class MenuSelection {
 
-    static private int clickedMenu;
+    static private int clickedMenu = 0;
 
      static public void onItemSelected(MenuItem item){
         int id = item.getItemId();
@@ -44,6 +44,8 @@ public class MenuSelection {
                 break;
             case 4:
                 intent = new Intent(fromActivity, EchelleKatz.class);
+                break;
+            default:
                 break;
         }
         return intent;

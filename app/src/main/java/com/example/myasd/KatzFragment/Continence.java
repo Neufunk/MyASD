@@ -7,27 +7,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 import com.example.myasd.R;
 import com.example.myasd.tools.CheckboxControl;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class Continence extends Fragment {
 
+    TextView textView;
     CheckBox checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8,
             checkBox9, checkBox10, checkBox11, checkBox12, checkBox13, checkBox14, checkBox15, checkBox16;
     SendScore SS;
+    CheckboxControl checkboxControl = new CheckboxControl();
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.continence, container, false);
+        textView = view.findViewById(R.id.textView);
         checkBoxManipulation(view);
+        checkboxControl.checkCriteria(textView, 1);
         return view;
     }
 
@@ -37,9 +37,9 @@ public class Continence extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox1.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox3, checkBox4, checkBox5, checkBox6);
+                    checkboxControl.setDisabled(checkBox3, checkBox4, checkBox5, checkBox6, checkBox10, checkBox11, checkBox12, checkBox14, checkBox15);
                 } else {
-                    CheckboxControl.setEnabled(checkBox3, checkBox4, checkBox5, checkBox6);
+                    checkboxControl.setEnabled(checkBox3, checkBox4, checkBox5, checkBox6, checkBox10, checkBox11, checkBox12, checkBox14, checkBox15);
                 }
                 calculateScore();
             }
@@ -49,9 +49,9 @@ public class Continence extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox2.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox8, checkBox7);
+                    checkboxControl.setDisabled(checkBox7, checkBox8, checkBox9, checkBox13, checkBox16);
                 } else {
-                    CheckboxControl.setEnabled(checkBox7, checkBox8);
+                    checkboxControl.setEnabled(checkBox7, checkBox8, checkBox9, checkBox13, checkBox16);
                 }
                 calculateScore();
             }
@@ -61,9 +61,9 @@ public class Continence extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox3.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox1, checkBox5);
+                    checkboxControl.setDisabled(checkBox1, checkBox5);
                 } else {
-                    CheckboxControl.setEnabled(checkBox1, checkBox5);
+                    checkboxControl.setEnabled(checkBox1, checkBox5);
                 }
                 calculateScore();
             }
@@ -73,9 +73,9 @@ public class Continence extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox4.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox1, checkBox6);
+                    checkboxControl.setDisabled(checkBox1, checkBox6);
                 } else {
-                    CheckboxControl.setEnabled(checkBox1, checkBox6);
+                    checkboxControl.setEnabled(checkBox1, checkBox6);
                 }
                 calculateScore();
             }
@@ -85,9 +85,9 @@ public class Continence extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox5.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox1, checkBox3);
+                    checkboxControl.setDisabled(checkBox1, checkBox3);
                 } else {
-                    CheckboxControl.setEnabled(checkBox1, checkBox3);
+                    checkboxControl.setEnabled(checkBox1, checkBox3);
                 }
                 calculateScore();
             }
@@ -97,9 +97,9 @@ public class Continence extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox6.isChecked()) {
-
+                    checkboxControl.setDisabled(checkBox1, checkBox4);
                 } else {
-
+                    checkboxControl.setEnabled(checkBox1, checkBox4);
                 }
                 calculateScore();
             }
@@ -109,9 +109,9 @@ public class Continence extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox7.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox2, checkBox8);
+                    checkboxControl.setDisabled(checkBox2, checkBox8);
                 } else {
-                    CheckboxControl.setEnabled(checkBox2, checkBox8);
+                    checkboxControl.setEnabled(checkBox2, checkBox8);
                 }
                 calculateScore();
             }
@@ -121,9 +121,9 @@ public class Continence extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox8.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox2, checkBox7);
+                    checkboxControl.setDisabled(checkBox2, checkBox7);
                 } else {
-                    CheckboxControl.setEnabled(checkBox2, checkBox7);
+                    checkboxControl.setEnabled(checkBox2, checkBox7);
                 }
                 calculateScore();
             }
@@ -133,9 +133,9 @@ public class Continence extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox9.isChecked()) {
-
+                    checkboxControl.setDisabled(checkBox1);
                 } else {
-
+                    checkboxControl.setEnabled(checkBox1);
                 }
                 calculateScore();
             }
@@ -145,9 +145,9 @@ public class Continence extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox10.isChecked()) {
-
+                    checkboxControl.setDisabled(checkBox1);
                 } else {
-
+                    checkboxControl.setEnabled(checkBox1);
                 }
                 calculateScore();
             }
@@ -157,9 +157,9 @@ public class Continence extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox11.isChecked()) {
-
+                    checkboxControl.setDisabled(checkBox1);
                 } else {
-
+                    checkboxControl.setEnabled(checkBox1);
                 }
                 calculateScore();
             }
@@ -169,9 +169,9 @@ public class Continence extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox12.isChecked()) {
-
+                    checkboxControl.setDisabled(checkBox2);
                 } else {
-
+                    checkboxControl.setEnabled(checkBox2);
                 }
                 calculateScore();
             }
@@ -181,9 +181,9 @@ public class Continence extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox13.isChecked()) {
-
+                    checkboxControl.setDisabled(checkBox2);
                 } else {
-
+                    checkboxControl.setEnabled(checkBox2);
                 }
                 calculateScore();
             }
@@ -193,9 +193,9 @@ public class Continence extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox14.isChecked()) {
-
+                    checkboxControl.setDisabled(checkBox1);
                 } else {
-
+                    checkboxControl.setEnabled(checkBox1);
                 }
                 calculateScore();
             }
@@ -205,9 +205,9 @@ public class Continence extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox15.isChecked()) {
-
+                    checkboxControl.setDisabled(checkBox1);
                 } else {
-
+                    checkboxControl.setEnabled(checkBox1);
                 }
                 calculateScore();
             }
@@ -217,9 +217,9 @@ public class Continence extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox16.isChecked()) {
-
+                    checkboxControl.setDisabled(checkBox2);
                 } else {
-
+                    checkboxControl.setEnabled(checkBox2);
                 }
                 calculateScore();
             }
@@ -227,6 +227,7 @@ public class Continence extends Fragment {
     }
 
     private void calculateScore() {
+        checkboxControl.checkCriteria(textView, 1);
         if (checkBox15.isChecked() && checkBox16.isChecked()) {
             SS.sendScoreContinence("4");
         } else if (checkBox5.isChecked() && checkBox6.isChecked() && checkBox8.isChecked()) {

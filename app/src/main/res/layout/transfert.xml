@@ -1,135 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="120dp"
-    tools:context=".KatzFragment.Transfert">
+    android:layout_height="match_parent">
 
-    <LinearLayout
+    <ScrollView xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:paddingTop="120dp"
+        tools:context=".KatzFragment.Transfert">
 
-        <!-- TODO: Update blank fragment layout -->
-
-
-        <CheckBox
-            android:id="@+id/checkBox1"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:text="Est autonome pour le transfert"
-            android:textSize="18sp" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <CheckBox
-            android:id="@+id/checkBox2"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:text="Est autonome pour le déplacement"
-            android:textSize="18sp" />
+            <CheckBox
+                android:id="@+id/checkBox1"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:text="Est autonome pour le transfert"
+                android:textSize="18sp" />
 
-        <CheckBox
-            android:id="@+id/checkBox3"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:text="S’aide, éventuellement pour le transfert via auxiliaire mécanique : perroquet,"
-            android:textSize="18sp" />
+            <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="#ddd"
+                android:text="Est autonome pour le déplacement"
+                android:textSize="18sp" />
 
-        <CheckBox
-            android:id="@+id/checkBox4"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:text="S’aide au déplacement via auxiliaire mécanique : béquilles, tribune, chaise roulante avec, si nécessaire, l’aide occasionnelle d’un tiers."
-            android:textSize="18sp" />
+            <CheckBox
+                android:id="@+id/checkBox3"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:text="S’aide, éventuellement pour le transfert via auxiliaire mécanique : perroquet,"
+                android:textSize="18sp" />
 
-        <CheckBox
-            android:id="@+id/checkBox5"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:text="Stimulation (vocale ou physique -par exemple préparer les vêtements-)"
-            android:textSize="18sp" />
+            <CheckBox
+                android:id="@+id/checkBox4"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:background="#ddd"
+                android:text="S’aide au déplacement via auxiliaire mécanique : béquilles, tribune, chaise roulante avec, si nécessaire, l’aide occasionnelle d’un tiers."
+                android:textSize="18sp" />
 
-        <CheckBox
-            android:id="@+id/checkBox6"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:text="Aide d’un tier pour se lever du lit"
-            android:textSize="18sp" />
+            <CheckBox
+                android:id="@+id/checkBox5"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:text="Stimulation (vocale ou physique -par exemple préparer les vêtements-)"
+                android:textSize="18sp" />
 
-        <CheckBox
-            android:id="@+id/checkBox7"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:text="Aide d’un tier pour se coucher"
-            android:textSize="18sp" />
+            <CheckBox
+                android:id="@+id/checkBox6"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="#ddd"
+                android:text="Aide d’un tiers pour se lever du lit"
+                android:textSize="18sp" />
 
-        <CheckBox
-            android:id="@+id/checkBox8"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:text="Aide d’un tier pour se mettre debout"
-            android:textSize="18sp" />
+            <CheckBox
+                android:id="@+id/checkBox7"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:text="Aide d’un tiers pour se coucher"
+                android:textSize="18sp" />
 
-        <CheckBox
-            android:id="@+id/checkBox9"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:text="Aide d’un tier pour s'asseoir"
-            android:textSize="18sp" />
+            <CheckBox
+                android:id="@+id/checkBox8"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="#ddd"
+                android:text="Aide d’un tiers pour se mettre debout"
+                android:textSize="18sp" />
 
-        <CheckBox
-            android:id="@+id/checkBox10"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:text="Aide d’un tier pour chaque déplacement"
-            android:textSize="18sp" />
+            <CheckBox
+                android:id="@+id/checkBox9"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:text="Aide d’un tiers pour s'asseoir"
+                android:textSize="18sp" />
 
-        <CheckBox
-            android:id="@+id/checkBox11"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:text="Aide complète pour se déplacer, y compris si en chaise roulante"
-            android:textSize="18sp" />
+            <CheckBox
+                android:id="@+id/checkBox10"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="#ddd"
+                android:text="Aide d’un tiers pour chaque déplacement"
+                android:textSize="18sp" />
 
-        <CheckBox
-            android:id="@+id/checkBox12"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:text="Grabataire"
-            android:textSize="18sp" />
+            <CheckBox
+                android:id="@+id/checkBox11"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:text="Aide complète pour se déplacer, y compris si en chaise roulante"
+                android:textSize="18sp" />
 
-        <CheckBox
-            android:id="@+id/checkBox13"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:text="Voiturette électrique"
-            android:textSize="18sp" />
+            <CheckBox
+                android:id="@+id/checkBox12"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="#ddd"
+                android:text="Grabataire"
+                android:textSize="18sp" />
 
+            <CheckBox
+                android:id="@+id/checkBox13"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:text="Voiturette électrique"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_weight="1"
+        android:background="#FF0000"
+        android:gravity="center"
+        android:textColor="#FFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Minimum 2 critères, sauf pour les 3 derniers où 1 seul suffit" />
-
-
-    </LinearLayout>
-</ScrollView>
+</android.support.constraint.ConstraintLayout>

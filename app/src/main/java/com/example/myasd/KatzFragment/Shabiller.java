@@ -2,22 +2,21 @@ package com.example.myasd.KatzFragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 import com.example.myasd.R;
 import com.example.myasd.tools.CheckboxControl;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class Shabiller extends Fragment {
 
+    CheckboxControl checkboxControl = new CheckboxControl();
     CheckBox checkBox1;
     CheckBox checkBox2;
     CheckBox checkBox3;
@@ -27,18 +26,19 @@ public class Shabiller extends Fragment {
     CheckBox checkBox7;
     CheckBox checkBox8;
     SendScore SS;
+    TextView textView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.s_habiller, container, false);
-        return view;
+        return inflater.inflate(R.layout.s_habiller, container, false);
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        textView = view.findViewById(R.id.textView);
+        checkboxControl.checkCriteria(textView, 1);
         checkBoxManipulation(view);
     }
 
@@ -56,9 +56,9 @@ public class Shabiller extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox1.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox3, checkBox8);
+                    checkboxControl.setDisabled(checkBox3, checkBox8);
                 } else {
-                    CheckboxControl.setEnabled(checkBox3, checkBox8);
+                    checkboxControl.setEnabled(checkBox3, checkBox8);
                 }
                 calculateScore();
             }
@@ -67,9 +67,9 @@ public class Shabiller extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox2.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox4, checkBox8);
+                    checkboxControl.setDisabled(checkBox4, checkBox8);
                 } else {
-                    CheckboxControl.setEnabled(checkBox3, checkBox8);
+                    checkboxControl.setEnabled(checkBox4, checkBox8);
                 }
                 calculateScore();
             }
@@ -78,9 +78,9 @@ public class Shabiller extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox3.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox1, checkBox8);
+                    checkboxControl.setDisabled(checkBox1, checkBox8);
                 } else {
-                    CheckboxControl.setEnabled(checkBox1, checkBox8);
+                    checkboxControl.setEnabled(checkBox1, checkBox8);
                 }
                 calculateScore();
             }
@@ -89,9 +89,9 @@ public class Shabiller extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox4.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox2, checkBox8);
+                    checkboxControl.setDisabled(checkBox2, checkBox8);
                 } else {
-                    CheckboxControl.setEnabled(checkBox2, checkBox8);
+                    checkboxControl.setEnabled(checkBox2, checkBox8);
                 }
                 calculateScore();
             }
@@ -100,9 +100,9 @@ public class Shabiller extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox5.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox8);
+                    checkboxControl.setDisabled(checkBox8);
                 } else {
-                    CheckboxControl.setEnabled(checkBox8);
+                    checkboxControl.setEnabled(checkBox8);
                 }
                 calculateScore();
             }
@@ -111,9 +111,9 @@ public class Shabiller extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox6.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox8);
+                    checkboxControl.setDisabled(checkBox8);
                 } else {
-                    CheckboxControl.setEnabled(checkBox8);
+                    checkboxControl.setEnabled(checkBox8);
                 }
                 calculateScore();
             }
@@ -121,10 +121,10 @@ public class Shabiller extends Fragment {
         checkBox7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (checkBox6.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox8);
+                if (checkBox7.isChecked()) {
+                    checkboxControl.setDisabled(checkBox8);
                 } else {
-                    CheckboxControl.setEnabled(checkBox8);
+                    checkboxControl.setEnabled(checkBox8);
                 }
                 calculateScore();
             }
@@ -133,9 +133,9 @@ public class Shabiller extends Fragment {
             @Override
             public void onClick(View v) {
                 if (checkBox8.isChecked()) {
-                    CheckboxControl.setDisabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7);
+                    checkboxControl.setDisabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7);
                 } else {
-                    CheckboxControl.setEnabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7);
+                    checkboxControl.setEnabled(checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7);
                 }
                 calculateScore();
             }
@@ -143,6 +143,7 @@ public class Shabiller extends Fragment {
     }
 
     private void calculateScore() {
+        checkboxControl.checkCriteria(textView, 1);
         if (checkBox8.isChecked()) {
             SS.sendScoreShabiller("4");
         } else if (checkBox7.isChecked() || checkBox6.isChecked()) {

@@ -3,9 +3,7 @@ package com.example.myasd;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
@@ -36,7 +34,7 @@ public class EchelleKatz extends AppCompatActivity
         Continence.SendScore,
         Manger.SendScore {
 
-    String message, name, forfait;
+    MenuItem item;
     TabLayout tabLayout;
     ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
@@ -62,8 +60,10 @@ public class EchelleKatz extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close){
             @Override
             public void onDrawerClosed(View drawerView) {
-                super.onDrawerClosed(drawerView);
-                startActivity(new Intent(MenuSelection.launchSelectedItem(EchelleKatz.this)));
+                if(item != null) {
+                    super.onDrawerClosed(drawerView);
+                    startActivity(new Intent(MenuSelection.launchSelectedItem(EchelleKatz.this)));
+                }
             }
         };
         drawer.addDrawerListener(toggle);
@@ -105,6 +105,7 @@ public class EchelleKatz extends AppCompatActivity
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        this.item = item;
         final ViewGroup viewGroup = findViewById(R.id.mainGroup);
         viewGroup.removeAllViews();
         viewGroup.addView(View.inflate(this, R.layout.loading_screen, null));
@@ -118,6 +119,7 @@ public class EchelleKatz extends AppCompatActivity
     public void sendScoreSeLaver(String score) {
         String tag = "android:switcher:" + R.id.viewPager + ":" + 6;
         Resume resume = (Resume) getSupportFragmentManager().findFragmentByTag(tag);
+        assert resume != null;
         resume.setScore_1(score);
     }
 
@@ -125,6 +127,7 @@ public class EchelleKatz extends AppCompatActivity
     public void sendScoreShabiller(String score) {
         String tag = "android:switcher:" + R.id.viewPager + ":" + 6;
         Resume resume = (Resume) getSupportFragmentManager().findFragmentByTag(tag);
+        assert resume != null;
         resume.setScore_2(score);
     }
 
@@ -132,6 +135,7 @@ public class EchelleKatz extends AppCompatActivity
     public void sendTransfertScore(String score) {
         String tag = "android:switcher:" + R.id.viewPager + ":" + 6;
         Resume resume = (Resume) getSupportFragmentManager().findFragmentByTag(tag);
+        assert resume != null;
         resume.setScore_3(score);
     }
 
@@ -139,6 +143,7 @@ public class EchelleKatz extends AppCompatActivity
     public void sendScoretoilette(String score) {
         String tag = "android:switcher:" + R.id.viewPager + ":" + 6;
         Resume resume = (Resume) getSupportFragmentManager().findFragmentByTag(tag);
+        assert resume != null;
         resume.setScore_4(score);
     }
 
@@ -146,6 +151,7 @@ public class EchelleKatz extends AppCompatActivity
     public void sendScoreContinence(String score) {
         String tag = "android:switcher:" + R.id.viewPager + ":" + 6;
         Resume resume = (Resume) getSupportFragmentManager().findFragmentByTag(tag);
+        assert resume != null;
         resume.setScore_5(score);
     }
 
@@ -153,6 +159,7 @@ public class EchelleKatz extends AppCompatActivity
     public void sendScoreManger(String score) {
         String tag = "android:switcher:" + R.id.viewPager + ":" + 6;
         Resume resume = (Resume) getSupportFragmentManager().findFragmentByTag(tag);
+        assert resume != null;
         resume.setScore_6(score);
     }
 }

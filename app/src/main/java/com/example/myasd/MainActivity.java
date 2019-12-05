@@ -20,6 +20,8 @@ import com.example.myasd.tools.MenuSelection;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    MenuItem item;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
@@ -34,8 +36,10 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onDrawerClosed(View drawerView) {
                 super.onDrawerClosed(drawerView);
-                Intent selectedActivity = MenuSelection.launchSelectedItem(MainActivity.this);
-                startActivity(selectedActivity);
+                if (item != null) {
+                    Intent selectedActivity = MenuSelection.launchSelectedItem(MainActivity.this);
+                    startActivity(selectedActivity);
+                }
             }
         };
         drawer.addDrawerListener(toggle);
@@ -76,7 +80,8 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        final ViewGroup viewGroup = (ViewGroup) findViewById(R.id.mainGroup);
+        this.item = item;
+        final ViewGroup viewGroup = findViewById(R.id.mainGroup);
         viewGroup.removeAllViews();
         viewGroup.addView(View.inflate(this, R.layout.loading_screen, null));
         MenuSelection.onItemSelected(item);
