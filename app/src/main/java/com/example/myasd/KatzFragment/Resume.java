@@ -1,5 +1,6 @@
 package com.example.myasd.KatzFragment;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,17 +14,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.myasd.R;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Objects;
+
 public class Resume extends Fragment {
 
     EditText inputName, inputSurname, inputLocation;
-    EditText inputScore_1, inputScore_2, inputScore_3, inputScore_4, inputScore_5, inputScore_6, inputScoreForfait;
+    EditText inputScore_1, inputScore_2, inputScore_3, inputScore_4, inputScore_5, inputScore_6, inputScoreForfait, datePicker_1, datePicker_2;
     int score_1, score_2, score_3, score_4, score_5, score_6, total = 0;
+    Boolean t7Combination = false;
     CheckBox checkBox;
     String message;
     Spinner spinner;
@@ -32,6 +40,7 @@ public class Resume extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.resume, container, false);
+
         FloatingActionButton fab = view.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +54,23 @@ public class Resume extends Fragment {
                 }
             }
         });
+
+        datePicker_1 = view.findViewById(R.id.date_picker_1);
+        datePicker_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDatePickerDialog(v);
+            }
+        });
+
+        datePicker_2 = view.findViewById(R.id.date_picker_2);
+        datePicker_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDatePickerDialog(v);
+            }
+        });
+
         return view;
     }
 
@@ -73,13 +99,13 @@ public class Resume extends Fragment {
 
     private void calculateForfait() {
         if (checkScoreNotEmpty()) {
-            if (total >= 23) {
+            if (score_1 == 4 && score_2 == 4 && score_3 == 4 && score_4 == 4 && ((score_5 == 3 || score_6 == 4) || (score_5 == 4 && score_6 == 3))) {
                 inputScoreForfait.setText("FORFAIT C");
-            } else if (total >= 16) {
+            } else if (score_1 >= 3 && score_2 >= 3 && score_3 >= 3 && score_4 >= 3 && (score_5 >= 3 || score_6 >= 3)) {
                 inputScoreForfait.setText("FORFAIT B");
             } else if (score_1 >= 3 && score_2 >= 3 && (score_3 >= 3 || score_4 >= 3)) {
                 inputScoreForfait.setText("FORFAIT A");
-            } else if (score_1 >= 2 && score_2 >= 2 && score_5 >= 2 || checkBox.isChecked() && score_1 >= 2 && score_2 >= 2 || score_1 == 4 && score_2 == 4) {
+            } else if (score_1 >= 2 && score_2 >= 2 && score_5 >= 2 && t7Combination || checkBox.isChecked() && score_1 >= 2 && score_2 >= 2 || score_1 == 4 && score_2 == 4) {
                 inputScoreForfait.setText("NOMENCLATURE T7");
             } else if (score_1 >= 2) {
                 inputScoreForfait.setText("NOMENCLATURE T2");
@@ -116,7 +142,9 @@ public class Resume extends Fragment {
     private void setMessage() {
         message = "NOM DU PATIENT : " + inputName.getText().toString() + "\n";
         message = message + "PRÉNOM DU PATIENT : " + inputSurname.getText().toString() + "\n";
-        message = message + "LOCALITÉ DU PATIENT : " + inputLocation.getText().toString() + "\n\n";
+        message = message + "LOCALITÉ DU PATIENT : " + inputLocation.getText().toString() + "\n";
+        message = message + "DATE D'ENVOI : " + new SimpleDateFormat("dd/MM/yyyy").format(new Date()) + "\n";
+        message = message + "DATE DE VALIDITÉ : DU " + datePicker_1.getText().toString() + " AU " + datePicker_2.getText().toString() + "\n\n";
         message = message + "---------- SCORE ----------\n";
         message = message + "SE LAVER : " + score_1 + "\n";
         message = message + "S'HABILLER : " + score_2 + "\n";
@@ -124,7 +152,7 @@ public class Resume extends Fragment {
         message = message + "TOILETTE : " + score_4 + "\n";
         message = message + "CONTINENCE : " + score_5 + "\n";
         message = message + "MANGER : " + score_6 + "\n"+ "\n";
-        message = message + "FORFAIT :" + inputScoreForfait.getText().toString();
+        message = message + "\bFORFAIT : " + inputScoreForfait.getText().toString();
     }
 
     private void sendMail() {
@@ -132,7 +160,7 @@ public class Resume extends Fragment {
         i.setType("message/rfc822");
         String[] mails = setCenter();
         i.putExtra(android.content.Intent.EXTRA_EMAIL, mails);
-        i.putExtra(Intent.EXTRA_SUBJECT, "Nouvelle Échelle de Katz - " + inputName.getText().toString() + " " + inputSurname.getText().toString());
+        i.putExtra(Intent.EXTRA_SUBJECT, "Échelle de Katz - " + inputName.getText().toString() + " " + inputSurname.getText().toString() + " - " + new SimpleDateFormat("MM/yyyy").format(new Date()));
         i.putExtra(android.content.Intent.EXTRA_TEXT, "NOUVELLE ÉCHELLE DE KATZ\n"
 
                 + System.getProperty("line.separator")
@@ -141,6 +169,27 @@ public class Resume extends Fragment {
         startActivity(Intent.createChooser(i, "Choisissez l'application \"Email\" pour envoyer votre demande :"));
     }
 
+    public void openDatePickerDialog(final View v) {
+        Calendar cal = Calendar.getInstance();
+        DatePickerDialog datePickerDialog = new DatePickerDialog(Objects.requireNonNull(getActivity()),
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        String selectedDate = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
+                        switch (v.getId()) {
+                            case R.id.date_picker_1:
+                                ((EditText) v).setText(selectedDate);
+                                break;
+                            case R.id.date_picker_2:
+                                ((EditText) v).setText(selectedDate);
+                        }
+                    }
+                }, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH));
+
+
+        //datePickerDialog.getDatePicker().setMaxDate(cal.getTimeInMillis());
+        datePickerDialog.show();
+    }
 
     public void setScore_1(String score) {
         total -= score_1;
@@ -214,6 +263,10 @@ public class Resume extends Fragment {
         }
     }
 
+    public void checkT7Combination(Boolean bool) {
+        t7Combination = bool;
+    }
+
     private Boolean checkScoreNotEmpty() {
         return score_1 != 0 && score_2 != 0 && score_3 != 0 && score_4 != 0 && score_5 != 0 && score_6 != 0;
     }
@@ -233,6 +286,12 @@ public class Resume extends Fragment {
             errorText.setError("");
             errorText.setTextColor(Color.RED);
             errorText.setText("Ne peut être vide");
+            return false;
+        } else if (TextUtils.isEmpty(datePicker_1.getText())) {
+            datePicker_1.setError("Ne peut être vide");
+            return false;
+        } else if (TextUtils.isEmpty(datePicker_2.getText())) {
+            datePicker_2.setError("Ne peut être vide");
             return false;
         }
         return true;

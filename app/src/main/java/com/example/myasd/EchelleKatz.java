@@ -156,6 +156,14 @@ public class EchelleKatz extends AppCompatActivity
     }
 
     @Override
+    public void sendT7Combination(Boolean bool) {
+        String tag = "android:switcher:" + R.id.viewPager + ":" + 6;
+        Resume resume = (Resume) getSupportFragmentManager().findFragmentByTag(tag);
+        assert resume != null;
+        resume.checkT7Combination(bool);
+    }
+
+    @Override
     public void sendScoreManger(String score) {
         String tag = "android:switcher:" + R.id.viewPager + ":" + 6;
         Resume resume = (Resume) getSupportFragmentManager().findFragmentByTag(tag);

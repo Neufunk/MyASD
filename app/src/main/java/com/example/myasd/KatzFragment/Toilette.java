@@ -104,7 +104,7 @@ public class Toilette extends Fragment {
         });
     }
 
-    private void calculateScore(){
+    private void calculateScore() {
         checkboxControl.checkCriteria(textView, 3);
         if (checkBox1.isChecked() && checkBox2.isChecked() && checkBox3.isChecked()) {
             SS.sendScoretoilette("1");
@@ -118,7 +118,7 @@ public class Toilette extends Fragment {
             SS.sendScoretoilette("3");
         } else if (checkBox2.isChecked() && checkBox4.isChecked() && checkBox6.isChecked()) {
             SS.sendScoretoilette("3");
-        } else if (checkBox2.isChecked() && checkBox4.isChecked() && checkBox5.isChecked()) {
+        } else if (checkBox3.isChecked() && checkBox4.isChecked() && checkBox5.isChecked()) {
             SS.sendScoretoilette("3");
         } else if (checkBox4.isChecked() && checkBox5.isChecked() && checkBox6.isChecked()) {
             SS.sendScoretoilette("4");

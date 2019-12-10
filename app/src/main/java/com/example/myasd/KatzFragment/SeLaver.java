@@ -18,15 +18,7 @@ public class SeLaver extends Fragment {
 
     CheckboxControl checkboxControl = new CheckboxControl();
     SendScore SS;
-    CheckBox checkBox1;
-    CheckBox checkBox2;
-    CheckBox checkBox3;
-    CheckBox checkBox4;
-    CheckBox checkBox5;
-    CheckBox checkBox6;
-    CheckBox checkBox7;
-    CheckBox checkBox8;
-    CheckBox checkBox9;
+    CheckBox checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8, checkBox9;
     TextView textView;
 
     @Override
