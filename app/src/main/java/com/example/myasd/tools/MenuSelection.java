@@ -1,6 +1,7 @@
 package com.example.myasd.tools;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.util.Log;
 import android.view.MenuItem;
@@ -14,8 +15,15 @@ import com.example.myasd.R;
 public class MenuSelection {
 
     static private int clickedMenu = 0;
+    static private ProgressDialog progressBar;
 
-     static public void onItemSelected(MenuItem item){
+     static public void onItemSelected(MenuItem item, Activity activity) {
+         progressBar = new ProgressDialog(activity);
+         progressBar.setTitle("CHARGEMENT...");
+         progressBar.setIndeterminate(true);
+         progressBar.setCancelable(false);
+         progressBar.show();
+
         int id = item.getItemId();
         if (id == R.id.nav_home) {
             clickedMenu = 1;
@@ -48,6 +56,7 @@ public class MenuSelection {
             default:
                 break;
         }
+        progressBar.dismiss();
         return intent;
     }
 }

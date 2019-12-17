@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="radio_s">S</string>
+    <string name="radio_b">B</string>
+    <string name="radio_tb">TB</string>
+    <string name="radio_oui">OUI</string>
+    <string name="radio_non">NON</string>
+    <string name="radio_ok">OK</string>
+    <string name="radio_mitigé">MITIGÉ</string>
+</resources>

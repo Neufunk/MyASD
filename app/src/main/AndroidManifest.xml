@@ -14,7 +14,8 @@
         <activity
             android:name=".EvaluationStagiaires"
             android:label="@string/title_activity_evaluation_stagiaires"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/DarkTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name=".EchelleKatz"
             android:label="@string/title_activity_katz"
@@ -23,7 +24,7 @@
         <activity
             android:name=".Applicar"
             android:label="@string/title_activity_applicar"
-            android:theme="@style/AppTheme.NoActionBar"
+            android:theme="@style/BlueTheme"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name=".MainActivity"

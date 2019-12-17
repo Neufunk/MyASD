@@ -23,4 +23,11 @@
         <item>NAMUR</item>
     </string-array>
 
+    <string-array name="evaluation">
+        <item>  </item>
+        <item>Satisfaisant</item>
+        <item>Bien</item>
+        <item>Très bien</item>
+    </string-array>
+
 </resources>

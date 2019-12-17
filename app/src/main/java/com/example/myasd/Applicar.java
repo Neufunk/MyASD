@@ -1,32 +1,35 @@
 package com.example.myasd;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.view.View;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.view.MenuItem;
-import android.support.design.widget.NavigationView;
-import android.support.v4.widget.DrawerLayout;
-
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.ViewGroup;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.myasd.tools.MenuSelection;
+
+import java.util.Calendar;
+import java.util.Objects;
 
 public class Applicar extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -43,11 +46,12 @@ public class Applicar extends AppCompatActivity
         setContentView(R.layout.activity_applicar);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(checkEmpty()) {
+                if (checkEmpty()) {
                     sendMail();
                 } else {
                     Snackbar.make(view, "Veuillez corriger les erreurs", Snackbar.LENGTH_LONG)
@@ -55,13 +59,36 @@ public class Applicar extends AppCompatActivity
                 }
             }
         });
+
+        dateEdit1 = findViewById(R.id.date_edit_1);
+        dateEdit1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDatePickerDialog(v);
+            }
+        });
+        dateEdit2 = findViewById(R.id.date_edit_2);
+        dateEdit2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDatePickerDialog(v);
+            }
+        });
+        dateEdit3 = findViewById(R.id.date_edit_3);
+        dateEdit3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDatePickerDialog(v);
+            }
+        });
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
             @Override
             public void onDrawerClosed(View drawerView) {
-                if(item != null) {
+                if (item != null) {
                     super.onDrawerClosed(drawerView);
                     Intent selectedActivity = MenuSelection.launchSelectedItem(Applicar.this);
                     startActivity(selectedActivity);
@@ -83,11 +110,8 @@ public class Applicar extends AppCompatActivity
         homeVehicleCheckBox = findViewById(R.id.CheckBox1);
         adresseTitle = findViewById(R.id.adresse);
         adressEdit = findViewById(R.id.adressEdit);
-        dateEdit1 = findViewById(R.id.date_edit_1);
         dateSpinner1 = findViewById(R.id.spinner2);
-        dateEdit2 = findViewById(R.id.date_edit_2);
         dateSpinner2 = findViewById(R.id.spinner1);
-        dateEdit3 = findViewById(R.id.date_edit_3);
         dateSpinner3 = findViewById(R.id.spinner3);
         problemTypeSpinner = findViewById(R.id.spinner);
         keyLocationCheckBox = findViewById(R.id.checkBox2);
@@ -106,7 +130,7 @@ public class Applicar extends AppCompatActivity
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(plaque.getText().length() == 5 && charCounter[0] <= 4) {
+                if (plaque.getText().length() == 5 && charCounter[0] <= 4) {
                     plaque.append("-");
                 }
             }
@@ -167,10 +191,7 @@ public class Applicar extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         this.item = item;
-        final ViewGroup viewGroup = findViewById(R.id.mainGroup);
-        viewGroup.removeAllViews();
-        viewGroup.addView(View.inflate(this, R.layout.loading_screen, null));
-        MenuSelection.onItemSelected(item);
+        MenuSelection.onItemSelected(item, Applicar.this);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
@@ -196,6 +217,29 @@ public class Applicar extends AppCompatActivity
         return true;
     }
 
+    public void openDatePickerDialog(final View v) {
+        Calendar cal = Calendar.getInstance();
+        DatePickerDialog datePickerDialog = new DatePickerDialog(Objects.requireNonNull(this),
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        String selectedDate = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
+                        switch (v.getId()) {
+                            case R.id.date_edit_1:
+                                ((EditText) v).setText(selectedDate);
+                                break;
+                            case R.id.date_edit_2:
+                                ((EditText) v).setText(selectedDate);
+                                break;
+                            case R.id.date_edit_3:
+                                ((EditText) v).setText(selectedDate);
+                                break;
+                        }
+                    }
+                }, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH));
+        datePickerDialog.show();
+    }
+
     private void sendMail() {
         String numeroPlaque = plaque.getText().toString();
         String typeIntervention = problemTypeSpinner.getSelectedItem().toString();
@@ -215,7 +259,7 @@ public class Applicar extends AppCompatActivity
 
         Intent i = new Intent(Intent.ACTION_SEND);
         i.setType("message/rfc822");
-        i.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"informatique@asd-namur.be", "logistique@asd-namur.be"});
+        i.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"annie.bouchoms@asd-namur.be", "logistique@asd-namur.be"});
         i.putExtra(Intent.EXTRA_SUBJECT, "AppliCar - Demande [" + typeIntervention + "] pour " + numeroPlaque);
         i.putExtra(android.content.Intent.EXTRA_TEXT, "Demande d'intervention d'un chauffeur-logisticien"
 
@@ -234,7 +278,7 @@ public class Applicar extends AppCompatActivity
                 + System.getProperty("line.separator")
                 + "Dates de disponibilités :"
                 + System.getProperty("line.separator")
-                + dateEdit1.getText()+ " " + dateSpinner1.getSelectedItem().toString()
+                + dateEdit1.getText() + " " + dateSpinner1.getSelectedItem().toString()
                 + System.getProperty("line.separator")
                 + dateEdit2.getText() + " " + dateSpinner2.getSelectedItem().toString()
                 + System.getProperty("line.separator")

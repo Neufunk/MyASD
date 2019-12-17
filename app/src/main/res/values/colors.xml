@@ -7,7 +7,11 @@
     <color name="Black">#000000</color>
     <color name="White">#FFFFFF</color>
     <color name="BlueASD">#006681</color>
+    <color name="DarkBlueASD">#003c4d</color>
     <color name="GreenASD">#96bb37</color>
-    <color name="OrangeASD">#FF6600</color>
+    <color name="OrangeASD">#ff9c00</color>
     <color name="Pink">#D81B60</color>
+    <color name="DarkASD">#003333</color>
+    <color name="DarkDarkASD">#001111</color>
+    <color name="DarkOrangeASD">#b36e00</color>
 </resources>

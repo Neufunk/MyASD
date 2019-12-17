@@ -99,7 +99,7 @@ public class Resume extends Fragment {
 
     private void calculateForfait() {
         if (checkScoreNotEmpty()) {
-            if (score_1 == 4 && score_2 == 4 && score_3 == 4 && score_4 == 4 && ((score_5 == 3 || score_6 == 4) || (score_5 == 4 && score_6 == 3))) {
+            if (score_1 == 4 && score_2 == 4 && score_3 == 4 && score_4 == 4 && ((score_5 == 3 && score_6 == 4) || (score_5 == 4 && score_6 == 3))) {
                 inputScoreForfait.setText("FORFAIT C");
             } else if (score_1 >= 3 && score_2 >= 3 && score_3 >= 3 && score_4 >= 3 && (score_5 >= 3 || score_6 >= 3)) {
                 inputScoreForfait.setText("FORFAIT B");
@@ -151,7 +151,7 @@ public class Resume extends Fragment {
         message = message + "TRANSFERT & DÉPLACEMENTS : " + score_3 + "\n";
         message = message + "TOILETTE : " + score_4 + "\n";
         message = message + "CONTINENCE : " + score_5 + "\n";
-        message = message + "MANGER : " + score_6 + "\n"+ "\n";
+        message = message + "MANGER : " + score_6 + "\n" + "\n";
         message = message + "\bFORFAIT : " + inputScoreForfait.getText().toString();
     }
 
@@ -182,12 +182,10 @@ public class Resume extends Fragment {
                                 break;
                             case R.id.date_picker_2:
                                 ((EditText) v).setText(selectedDate);
+                                break;
                         }
                     }
                 }, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH));
-
-
-        //datePickerDialog.getDatePicker().setMaxDate(cal.getTimeInMillis());
         datePickerDialog.show();
     }
 
@@ -277,12 +275,12 @@ public class Resume extends Fragment {
             return false;
         } else if (TextUtils.isEmpty(inputSurname.getText())) {
             inputSurname.setError("Ne peut être vide");
-        return false;
+            return false;
         } else if (TextUtils.isEmpty(inputLocation.getText())) {
             inputLocation.setError("Ne peut être vide");
             return false;
         } else if (spinner.getSelectedItemPosition() == 0) {
-            TextView errorText = (TextView)spinner.getSelectedView();
+            TextView errorText = (TextView) spinner.getSelectedView();
             errorText.setError("");
             errorText.setTextColor(Color.RED);
             errorText.setText("Ne peut être vide");

@@ -15,6 +15,7 @@
     <string name="menu_stagiaires">Eval. Stagiaires</string>
     <string name="menu_katz">Echelles de Katz</string>
     <string name="menu_roadsheets">Feuilles de route \  <font size="10"><i>beta</i></font></string>
+    <string name="menu_materiel">Commande de matériel</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
     <string name="applicar">Applicar</string>

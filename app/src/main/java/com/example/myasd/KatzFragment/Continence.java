@@ -18,7 +18,6 @@ public class Continence extends Fragment {
     CheckBox checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8,
             checkBox9, checkBox10, checkBox11, checkBox12, checkBox13, checkBox14, checkBox15, checkBox16;
     SendScore SS;
-    Boolean t7_combination = false;
     CheckboxControl checkboxControl = new CheckboxControl();
 
 
@@ -250,7 +249,7 @@ public class Continence extends Fragment {
     }
 
     private void checkT7Combination() {
-        t7_combination = checkBox3.isChecked() && checkBox6.isChecked();
+        Boolean t7_combination = checkBox3.isChecked() && checkBox6.isChecked();
         SS.sendT7Combination(t7_combination);
     }
 

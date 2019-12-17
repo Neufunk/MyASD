@@ -14,7 +14,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.myasd.KatzFragment.Continence;
 import com.example.myasd.KatzFragment.Manger;
@@ -106,10 +105,7 @@ public class EchelleKatz extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         this.item = item;
-        final ViewGroup viewGroup = findViewById(R.id.mainGroup);
-        viewGroup.removeAllViews();
-        viewGroup.addView(View.inflate(this, R.layout.loading_screen, null));
-        MenuSelection.onItemSelected(item);
+        MenuSelection.onItemSelected(item, EchelleKatz.this);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
