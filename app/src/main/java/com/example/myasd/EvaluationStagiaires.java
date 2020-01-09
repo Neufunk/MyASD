@@ -25,19 +25,21 @@ import android.widget.TextView;
 
 import com.example.myasd.tools.MenuSelection;
 
+import org.w3c.dom.Text;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class EvaluationStagiaires extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    EditText inputName, inputSurname, inputSchool, inputSection;
+    EditText inputName, inputSurname, inputSchool;
     RadioGroup radioGroup1, radioGroup2, radioGroup3, radioGroup4, radioGroup5, radioGroup6, radioGroup7, radioGroup8, radioGroup9, radioGroup10;
     TextView textViewQ1, textViewQ2, textViewQ3, textViewQ4, textViewQ5, textViewQ6, textViewQ7, textViewQ8, textViewQ9, textViewQ10;
     MenuItem item;
     RadioButton radioButton;
     String message;
-    Spinner spinner;
+    Spinner spinner, inputSection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,7 +131,7 @@ public class EvaluationStagiaires extends AppCompatActivity
         message = message + "NOM DE L'ÉTUDIANT : " + inputName.getText().toString() + "\n";
         message = message + "PRÉNOM DE L'ÉTUDIANT : " + inputSurname.getText().toString() + "\n";
         message = message + "ÉCOLE : " + inputSchool.getText().toString() + "\n";
-        message = message + "SECTION : " + inputSection.getText().toString() + "\n\n";
+        message = message + "SECTION : " + inputSection.getSelectedItem().toString() + "\n\n";
         for (int i = 0; i < radioGroups.length; i++) {
             try {
                 radioButton = findViewById(radioGroups[i].getCheckedRadioButtonId());
@@ -215,8 +217,11 @@ public class EvaluationStagiaires extends AppCompatActivity
         } else if (TextUtils.isEmpty(inputSchool.getText())) {
             inputSchool.setError("Ne peut être vide");
             return false;
-        } else if (TextUtils.isEmpty(inputSection.getText())) {
-            inputSection.setError("Ne peut être vide");
+        } else if (inputSection.getSelectedItemPosition() == 0) {
+            TextView errorText = (TextView) inputSection.getSelectedView();
+            errorText.setError("");
+            errorText.setTextColor(Color.RED);
+            errorText.setText("Ne peut être vide");
             return false;
         } else if (spinner.getSelectedItemPosition() == 0) {
             TextView errorText = (TextView) spinner.getSelectedView();

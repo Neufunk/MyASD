@@ -23,6 +23,13 @@
         <item>NAMUR</item>
     </string-array>
 
+    <string-array name="section">
+        <item>Choisir dans la liste</item>
+        <item>Aide-Soignante</item>
+        <item>Brevet</item>
+        <item>Baccalauréat</item>
+    </string-array>
+
     <string-array name="evaluation">
         <item>  </item>
         <item>Satisfaisant</item>

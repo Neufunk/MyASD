@@ -52,16 +52,6 @@
                     android:text="ÉCOLE"
                     android:textColor="@color/Black"
                     android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/sectionTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="SECTION"
-                    android:textColor="@color/Black"
-                    android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -101,17 +91,6 @@
                     android:hint="École"
                     android:importantForAutofill="no"
                     android:inputType="textCapSentences" />
-
-                <EditText
-                    android:id="@+id/inputSection"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="9"
-                    android:gravity="center"
-                    android:hint="Section"
-                    android:importantForAutofill="no"
-                    android:inputType="textCapSentences" />
             </LinearLayout>
 
             <LinearLayout
@@ -122,16 +101,37 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="100dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
                     android:text="CENTRE : "
                     android:textSize="20sp" />
 
                 <Spinner
                     android:id="@+id/center_spinner"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
                     android:layout_height="match_parent"
                     android:entries="@array/centre_name" />
+
+                <TextView
+                    android:id="@+id/sectionTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="SECTION : "
+                    android:textSize="20sp" />
+
+                <Spinner
+                    android:id="@+id/inputSection"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:entries="@array/section" />
 
             </LinearLayout>
 
@@ -562,7 +562,8 @@
                     android:id="@+id/radio_group_10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    tools:ignore="UselessParent">
 
                     <RadioButton
                         android:id="@+id/radioButton26"
