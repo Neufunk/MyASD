@@ -99,7 +99,7 @@ public class Resume extends Fragment {
 
     private void calculateForfait() {
         if (checkScoreNotEmpty()) {
-            if (score_1 == 4 && score_2 == 4 && score_3 == 4 && score_4 == 4 && ((score_5 == 3 && score_6 == 4) || (score_5 == 4 && score_6 == 3))) {
+            if (score_1 == 4 && score_2 == 4 && score_3 == 4 && score_4 == 4 && ((score_5 >= 3 && score_6 == 4) || (score_5 == 4 && score_6 >= 3))) {
                 inputScoreForfait.setText("FORFAIT C");
             } else if (score_1 >= 3 && score_2 >= 3 && score_3 >= 3 && score_4 >= 3 && (score_5 >= 3 || score_6 >= 3)) {
                 inputScoreForfait.setText("FORFAIT B");
@@ -124,7 +124,7 @@ public class Resume extends Fragment {
                 emailArray = new String[]{"delphine.veys@asd-namur.be", "jean-christophe.groux@asd-namur.be"};
                 break;
             case 2:
-                emailArray = new String[]{"infirmieres.ciney@asd-namur.be", "catherine.paquet@asd-namur.be"};
+                emailArray = new String[]{"infirmieres.ciney@asd-namur.be", " "};
                 break;
             case 3:
                 emailArray = new String[]{"severine.vermersch@asd-namur.be", " "};

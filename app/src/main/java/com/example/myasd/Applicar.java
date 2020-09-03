@@ -29,7 +29,6 @@ import android.widget.TextView;
 import com.example.myasd.tools.MenuSelection;
 
 import java.util.Calendar;
-import java.util.Objects;
 
 public class Applicar extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -219,7 +218,7 @@ public class Applicar extends AppCompatActivity
 
     public void openDatePickerDialog(final View v) {
         Calendar cal = Calendar.getInstance();
-        DatePickerDialog datePickerDialog = new DatePickerDialog(Objects.requireNonNull(this),
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
                 new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
