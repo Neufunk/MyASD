@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.MenuItem;
 
 import com.example.myasd.Applicar;
+import com.example.myasd.CommandeMateriel;
 import com.example.myasd.EchelleKatz;
 import com.example.myasd.EvaluationStagiaires;
 import com.example.myasd.MainActivity;
@@ -33,6 +34,8 @@ public class MenuSelection {
             clickedMenu = 3;
         } else if (id == R.id.nav_katz) {
             clickedMenu = 4;
+        } else if (id == R.id.nav_materiel) {
+            clickedMenu = 5;
         }
     }
 
@@ -52,6 +55,9 @@ public class MenuSelection {
                 break;
             case 4:
                 intent = new Intent(fromActivity, EchelleKatz.class);
+                break;
+            case 5:
+                intent = new Intent(fromActivity, CommandeMateriel.class);
                 break;
             default:
                 break;

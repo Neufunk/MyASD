@@ -12,14 +12,19 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
+            android:name=".CommandeMateriel"
+            android:label="@string/title_activity_commande_materiel"
+            android:theme="@style/DarkTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
             android:name=".EvaluationStagiaires"
             android:label="@string/title_activity_evaluation_stagiaires"
             android:theme="@style/DarkTheme"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name=".EchelleKatz"
-            android:label="@string/title_activity_katz"
             android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_katz"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Applicar"
