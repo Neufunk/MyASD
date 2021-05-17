@@ -119,7 +119,7 @@ public class Applicar extends AppCompatActivity
 
     private void plaqueEditOperations() {
         plaque.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
-        plaque.append("1-");
+        //plaque.append("1-");
         final int[] charCounter = new int[1];
         plaque.addTextChangedListener(new TextWatcher() {
             @Override
@@ -129,6 +129,9 @@ public class Applicar extends AppCompatActivity
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (plaque.getText().length() == 1 && charCounter[0] <= 1) {
+                    plaque.append("-");
+                }
                 if (plaque.getText().length() == 5 && charCounter[0] <= 4) {
                     plaque.append("-");
                 }

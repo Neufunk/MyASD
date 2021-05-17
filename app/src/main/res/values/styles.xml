@@ -24,6 +24,14 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="GreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/GreenASD</item>
+        <item name="colorPrimaryDark">@color/GreenGreenASD</item>
+        <item name="colorAccent">@color/GreenASD</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>

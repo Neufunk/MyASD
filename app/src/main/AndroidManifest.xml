@@ -14,7 +14,7 @@
         <activity
             android:name=".CommandeMateriel"
             android:label="@string/title_activity_commande_materiel"
-            android:theme="@style/DarkTheme"
+            android:theme="@style/GreenTheme"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name=".EvaluationStagiaires"
