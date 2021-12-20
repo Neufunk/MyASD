@@ -19,11 +19,13 @@
         <item
             android:id="@+id/nav_katz"
             android:icon="@drawable/ic_menu_send"
-            android:title="@string/menu_katz" />
+            android:title="@string/menu_katz"
+            android:enabled="false"/>
         <item
             android:id="@+id/nav_materiel"
 
             android:title="@string/menu_materiel"
+            android:icon="@drawable/packages"
             android:enabled="true"/>
         <item
             android:id="@+id/nav_route"

@@ -130,7 +130,7 @@ public class Resume extends Fragment {
                 emailArray = new String[]{"severine.vermersch@asd-namur.be", " "};
                 break;
             case 4:
-                emailArray = new String[]{"bernadette.lemoine@asd-namur.be", ""};
+                emailArray = new String[]{"caroline.sartori@asd-namur.be", "elise.verschooren@asd-namur.be"};
                 break;
             case 5:
                 emailArray = new String[]{"sandra.derop@asd-namur.be", "virginie.mathot@asd-namur.be"};

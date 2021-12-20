@@ -184,7 +184,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Aiguilles roses"
+                    android:text="Aiguilles roses - Puiseuses"
                     android:textColor="@color/Black"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -688,7 +688,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Boite verte ronde"
+                    android:text="Boite lingettes désinfectantes"
                     android:textColor="@color/Black"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -1024,7 +1024,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Micropore 2cm"
+                    android:text="Micropore 2cm - €0,75"
                     android:textColor="@color/Black"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -1047,74 +1047,18 @@
                 android:layout_marginTop="10dp">
 
                 <TextView
-                    android:id="@+id/textViewQ35"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Compresses 5/5"
-                    android:textColor="@color/Black"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/editText35"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="9"
-                    android:gravity="center"
-                    android:hint="Nombre"
-                    android:importantForAutofill="no"
-                    android:inputType="number" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp">
-
-                <TextView
                     android:id="@+id/textViewQ36"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Sondes BL ou Noires"
+                    android:text="Sondes BL ou Noires - €0,30"
                     android:textColor="@color/Black"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/editText36"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="9"
-                    android:gravity="center"
-                    android:hint="Nombre"
-                    android:importantForAutofill="no"
-                    android:inputType="number" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp">
-
-                <TextView
-                    android:id="@+id/textViewQ37"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Sondes rectales"
-                    android:textColor="@color/Black"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/editText37"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -1187,68 +1131,12 @@
                 android:layout_marginTop="10dp">
 
                 <TextView
-                    android:id="@+id/textViewQ40"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Isobétadine"
-                    android:textColor="@color/Black"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/editText40"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="9"
-                    android:gravity="center"
-                    android:hint="Nombre"
-                    android:importantForAutofill="no"
-                    android:inputType="number" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp">
-
-                <TextView
-                    android:id="@+id/textViewQ41"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Hibidil"
-                    android:textColor="@color/Black"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/editText41"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="9"
-                    android:gravity="center"
-                    android:hint="Nombre"
-                    android:importantForAutofill="no"
-                    android:inputType="number" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp">
-
-                <TextView
                     android:id="@+id/textViewQ42"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Gants stériles"
+                    android:text="Gants stériles - €0,60"
                     android:textColor="@color/Black"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -1271,180 +1159,12 @@
                 android:layout_marginTop="10dp">
 
                 <TextView
-                    android:id="@+id/textViewQ43"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Sac urine"
-                    android:textColor="@color/Black"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/editText43"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="9"
-                    android:gravity="center"
-                    android:hint="Nombre"
-                    android:importantForAutofill="no"
-                    android:inputType="number" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp">
-
-                <TextView
-                    android:id="@+id/textViewQ44"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Urogard"
-                    android:textColor="@color/Black"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/editText44"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="9"
-                    android:gravity="center"
-                    android:hint="Nombre"
-                    android:importantForAutofill="no"
-                    android:inputType="number" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp">
-
-                <TextView
-                    android:id="@+id/textViewQ45"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Serum Physio"
-                    android:textColor="@color/Black"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/editText45"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="9"
-                    android:gravity="center"
-                    android:hint="Nombre"
-                    android:importantForAutofill="no"
-                    android:inputType="number" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp">
-
-                <TextView
-                    android:id="@+id/textViewQ46"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Set de sondage"
-                    android:textColor="@color/Black"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/editText46"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="9"
-                    android:gravity="center"
-                    android:hint="Nombre"
-                    android:importantForAutofill="no"
-                    android:inputType="number" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp">
-
-                <TextView
-                    android:id="@+id/textViewQ47"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Instillagel"
-                    android:textColor="@color/Black"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/editText47"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="9"
-                    android:gravity="center"
-                    android:hint="Nombre"
-                    android:importantForAutofill="no"
-                    android:inputType="number" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp">
-
-                <TextView
-                    android:id="@+id/textViewQ48"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Sac lavement"
-                    android:textColor="@color/Black"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/editText48"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="9"
-                    android:gravity="center"
-                    android:hint="Nombre"
-                    android:importantForAutofill="no"
-                    android:inputType="number" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp">
-
-                <TextView
                     android:id="@+id/textViewQ49"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Curette"
+                    android:text="Curette - €3,00"
                     android:textColor="@color/Black"
                     android:textSize="15sp"
                     android:textStyle="bold" />

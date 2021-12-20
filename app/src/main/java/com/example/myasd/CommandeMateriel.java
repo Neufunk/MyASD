@@ -172,14 +172,20 @@ public class CommandeMateriel extends AppCompatActivity
     }
 
     private void setMessage() {
-        TextView[] materiel_name = {textViewQ1, textViewQ2, textViewQ3, textViewQ4, textViewQ5,
-                textViewQ6, textViewQ7, textViewQ8, textViewQ9, textViewQ10, textViewQ11, textViewQ12,
-                textViewQ13, textViewQ14, textViewQ15, textViewQ16, textViewQ17, textViewQ18, textViewQ19,
-                textViewQ20, textViewQ21, textViewQ22};
-        EditText[] material_number = {editText1, editText2, editText3, editText4, editText5, editText6,
-                editText7, editText8, editText9, editText10, editText11, editText12, editText13,
-                editText14, editText15, editText16, editText17, editText18, editText19, editText20,
-                editText21, editText22};
+        TextView[] materiel_name = {textViewQ1, textViewQ2, textViewQ3, textViewQ4, textViewQ5, textViewQ6, textViewQ7,
+                textViewQ8, textViewQ9, textViewQ10, textViewQ11, textViewQ12, textViewQ13, textViewQ14,
+                textViewQ15, textViewQ16, textViewQ17, textViewQ18, textViewQ19, textViewQ20, textViewQ21,
+                textViewQ22, textViewQ23, textViewQ24, textViewQ25, textViewQ26, textViewQ27, textViewQ28, textViewQ29, textViewQ30,
+                textViewQ31, textViewQ32, textViewQ33, textViewQ34, textViewQ35, textViewQ36, textViewQ37, textViewQ38,
+                textViewQ39, textViewQ40, textViewQ41, textViewQ42, textViewQ43, textViewQ44, textViewQ45, textViewQ46,
+                textViewQ47, textViewQ48, textViewQ49, textViewQ50, textViewQ51, textViewQ52, textViewQ53, textViewQ54};
+        EditText[] material_number = {editText1, editText2, editText3, editText4, editText5,
+                editText6, editText7, editText8, editText9, editText10, editText11, editText12, editText13, editText14,
+                editText15, editText16, editText17, editText18, editText19, editText20, editText21, editText22, editText23,
+                editText24, editText25, editText26, editText27, editText28, editText29, editText30, editText31, editText32,
+                editText33, editText34, editText35, editText36, editText37, editText38, editText39, editText40, editText41,
+                editText42, editText43, editText44, editText45, editText46, editText47, editText48, editText49, editText50,
+                editText51, editText52, editText53, editText54};
 
         message = "PRENOM : " + inputSurname.getText().toString() + "\n";
         message = message + "NOM : " + inputName.getText().toString() + "\n\n";
@@ -191,7 +197,7 @@ public class CommandeMateriel extends AppCompatActivity
                 message = message + materiel_name[i].getText().toString() + " : " + material_number[i].getText().toString() + "\n";
             }
         }
-        message = message + "Merci beaucoup !";
+        message = message + "\n Merci beaucoup !";
     }
 
     private void sendMail() {
@@ -237,6 +243,38 @@ public class CommandeMateriel extends AppCompatActivity
         textViewQ20 = findViewById(R.id.textViewQ20);
         textViewQ21 = findViewById(R.id.textViewQ21);
         textViewQ22 = findViewById(R.id.textViewQ22);
+        textViewQ23 = findViewById(R.id.textViewQ23);
+        textViewQ24 = findViewById(R.id.textViewQ24);
+        textViewQ25 = findViewById(R.id.textViewQ25);
+        textViewQ26 = findViewById(R.id.textViewQ26);
+        textViewQ27 = findViewById(R.id.textViewQ27);
+        textViewQ28 = findViewById(R.id.textViewQ28);
+        textViewQ29 = findViewById(R.id.textViewQ29);
+        textViewQ30 = findViewById(R.id.textViewQ30);
+        textViewQ31 = findViewById(R.id.textViewQ31);
+        textViewQ32 = findViewById(R.id.textViewQ32);
+        textViewQ33 = findViewById(R.id.textViewQ33);
+        textViewQ34 = findViewById(R.id.textViewQ34);
+        textViewQ35 = findViewById(R.id.textViewQ35);
+        textViewQ36 = findViewById(R.id.textViewQ36);
+        textViewQ37 = findViewById(R.id.textViewQ37);
+        textViewQ38 = findViewById(R.id.textViewQ38);
+        textViewQ39 = findViewById(R.id.textViewQ39);
+        textViewQ40 = findViewById(R.id.textViewQ40);
+        textViewQ41 = findViewById(R.id.textViewQ41);
+        textViewQ42 = findViewById(R.id.textViewQ42);
+        textViewQ43 = findViewById(R.id.textViewQ43);
+        textViewQ44 = findViewById(R.id.textViewQ44);
+        textViewQ45 = findViewById(R.id.textViewQ45);
+        textViewQ46 = findViewById(R.id.textViewQ46);
+        textViewQ47 = findViewById(R.id.textViewQ47);
+        textViewQ48 = findViewById(R.id.textViewQ48);
+        textViewQ49 = findViewById(R.id.textViewQ49);
+        textViewQ50 = findViewById(R.id.textViewQ50);
+        textViewQ51 = findViewById(R.id.textViewQ51);
+        textViewQ52 = findViewById(R.id.textViewQ52);
+        textViewQ53 = findViewById(R.id.textViewQ53);
+        textViewQ54 = findViewById(R.id.textViewQ54);
 
         editText1 = findViewById(R.id.editText1);
         editText2 = findViewById(R.id.editText2);
@@ -260,6 +298,39 @@ public class CommandeMateriel extends AppCompatActivity
         editText20 = findViewById(R.id.editText20);
         editText21 = findViewById(R.id.editText21);
         editText22 = findViewById(R.id.editText22);
+        editText23 = findViewById(R.id.editText23);
+        editText24 = findViewById(R.id.editText24);
+        editText25 = findViewById(R.id.editText25);
+        editText26 = findViewById(R.id.editText26);
+        editText27 = findViewById(R.id.editText27);
+        editText28 = findViewById(R.id.editText28);
+        editText29 = findViewById(R.id.editText29);
+        editText30 = findViewById(R.id.editText30);
+        editText31 = findViewById(R.id.editText31);
+        editText32 = findViewById(R.id.editText32);
+        editText33 = findViewById(R.id.editText33);
+        editText34 = findViewById(R.id.editText34);
+        editText35 = findViewById(R.id.editText35);
+        editText36 = findViewById(R.id.editText36);
+        editText37 = findViewById(R.id.editText37);
+        editText38 = findViewById(R.id.editText38);
+        editText39 = findViewById(R.id.editText39);
+        editText40 = findViewById(R.id.editText40);
+        editText41 = findViewById(R.id.editText41);
+        editText42 = findViewById(R.id.editText42);
+        editText43 = findViewById(R.id.editText43);
+        editText44 = findViewById(R.id.editText44);
+        editText45 = findViewById(R.id.editText45);
+        editText46 = findViewById(R.id.editText46);
+        editText47 = findViewById(R.id.editText47);
+        editText48 = findViewById(R.id.editText48);
+        editText49 = findViewById(R.id.editText49);
+        editText50 = findViewById(R.id.editText50);
+        editText51 = findViewById(R.id.editText51);
+        editText52 = findViewById(R.id.editText52);
+        editText53 = findViewById(R.id.editText53);
+        editText54 = findViewById(R.id.editText54);
+
     }
 
 
